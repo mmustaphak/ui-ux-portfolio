@@ -19,7 +19,13 @@ export default function Layout() {
                 <img src={menu} alt="Open menu" />
             </nav>
 
-            <Outlet />  
+            <Outlet />
+
+            <div>
+                <h1>Get In Touch</h1>
+                <p>Let’s create something extraordinary- Get In Touch</p>
+                {/* Form Component */}
+            </div>
 
             <footer className="absolute bottom-0 flex flex-col justify-center mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black">
                 <p>Mufteey&apos;s Design</p>

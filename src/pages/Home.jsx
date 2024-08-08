@@ -34,12 +34,6 @@ export default function Home() {
                 <button>Download Resume</button>
             </div>
         </div>
-
-        <div>
-            <h1>Get In Touch</h1>
-            <p>Let’s create something extraordinary- Get In Touch</p>
-            {/* Form Component */}
-        </div>
     </section>
   )
 }
