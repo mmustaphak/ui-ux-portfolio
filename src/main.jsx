@@ -6,7 +6,9 @@ import Layout from './components/Layout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout />}/>
+    <Route path='/' element={<Layout />}>
+        <Route index element={<h1>Hello World & UI/UX Project</h1>}/>
+    </Route>
   )
 )
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { FaTwitter } from "react-icons/fa";
 import { LiaBehance } from "react-icons/lia";
@@ -19,10 +19,11 @@ export default function Layout() {
                 <img src={menu} alt="Open menu" />
             </nav>
 
+            <Outlet />  
+
             <footer className="absolute bottom-0 flex flex-col justify-center mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black">
                 <p>Mufteey&apos;s Design</p>
                 <div className="self-center flex justify-between mt-4 w-full max-w-[135px] text-base">
-                    {/*Socials Image Links*/}
                     <a href=""><BiLogoInstagramAlt /></a>
                     <a href=""><FaTwitter /></a>
                     <a href=""><PiLinkedinLogoFill /></a>
