@@ -5,7 +5,6 @@ import { LiaBehance } from "react-icons/lia";
 import { PiLinkedinLogoFill } from "react-icons/pi";
 import logo from "../assets/logo.svg"
 import menu from "../assets/menu.svg"
-import arrow from "../assets/menu-down.svg"
 
 export default function Layout() {
 
@@ -31,7 +30,7 @@ export default function Layout() {
                 </div>
                 <div>
                     <div className="mt-4 flex justify-between">
-                        <select className={`appearance-none pr-3 bg-transparent bg-[url('.${arrow}')] bg-right bg-no-repeat`} name="language">
+                        <select className={`appearance-none pr-3 bg-transparent bg-[url('./src/assets/menu-down.svg')] bg-right bg-no-repeat`} name="language">
                             <option value="English">English</option>
                         </select>
                         <p>{year} Mufteey. All right reserved</p>
