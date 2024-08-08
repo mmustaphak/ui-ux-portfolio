@@ -5,6 +5,7 @@ import { LiaBehance } from "react-icons/lia";
 import { PiLinkedinLogoFill } from "react-icons/pi";
 import logo from "../assets/logo.svg"
 import menu from "../assets/menu.svg"
+import GetInTouchForm from "./GetInTouchForm";
 
 export default function Layout() {
 
@@ -24,7 +25,7 @@ export default function Layout() {
             <div>
                 <h1 className="text-black font-semibold">Get In Touch</h1>
                 <p>Let’s create something extraordinary- Get In Touch</p>
-                {/* Form Component */}
+                <GetInTouchForm />
             </div>
 
             <footer className="flex flex-col justify-center mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black">
