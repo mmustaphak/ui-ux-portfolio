@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        black: 'hsl(var(--color-black) / <alpha-value>)',
+        grey: 'hsl(var(--color-grey) / <alpha-value>)',
+        whitish: 'hsl(var(--color-whitish) / <alpha-value>)',
+      }
+    },
   },
   plugins: [],
 }
