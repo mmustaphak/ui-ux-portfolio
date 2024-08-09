@@ -1,3 +1,5 @@
+import Resume from "../components/Resume"
+
 export default function Home() {
   return (
     <section className="pt-16 px-6 pb-6">
@@ -29,11 +31,9 @@ export default function Home() {
             <h1 className="text-black font-semibold">Testimonial</h1>
             <p>Testimonials Speak louder than words.</p>
             {/* Gallery Component */}
-            <div>
-                <p>Hey! Take a look at my resume.</p>
-                <button>Download Resume</button>
-            </div>
         </div>
+
+        <Resume />
     </section>
   )
 }
