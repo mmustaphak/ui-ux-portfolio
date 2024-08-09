@@ -1,5 +1,6 @@
 import Services from "../components/Services"
 import Resume from "../components/Resume"
+import projectImg from "../assets/portfolio-project.png"
 
 export default function Home() {
   return (
@@ -21,6 +22,12 @@ export default function Home() {
             <h1 className="text-black font-semibold">My Portfolio Projects</h1>
             <p>Explore the artistry and precision in my portfolio projects</p>
             {/* Project Cards */}
+            <div>
+                <div>
+                    <img src={projectImg} alt="" />
+                </div>
+                <h2>The Bee Charge Design</h2>
+            </div>
         </div>
 
         <div className="mt-6 flex flex-col justify-center items-center min-h-[135px] w-full rounded-lg text-white bg-black bg-[url('src/assets/corner-logo-top.svg'),_url('src/assets/corner-logo-bottom.svg')] bg-[position:top_right,_bottom_left] bg-no-repeat">
