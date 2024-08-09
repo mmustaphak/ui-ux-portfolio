@@ -12,7 +12,10 @@ export default {
         whitish: 'hsl(var(--color-whitish) / <alpha-value>)',
       },
       borderRadius:{
-        'button':'3.37px',
+        button:'3.37px',
+      },
+      fontSize:{
+        text: '10.11px',
       }
     },
   },
