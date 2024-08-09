@@ -1,4 +1,5 @@
 import Resume from "../components/Resume"
+import figma from "../assets/figma.svg"
 
 export default function Home() {
   return (
@@ -14,6 +15,11 @@ export default function Home() {
             <h1 className="text-black font-semibold">My Services</h1>
             <p>Transforming visions into captivating realities where design meets innovation for an exceptional UI/UX journey.</p>
             {/* Services Card */}
+            <div>
+                <img src={figma} alt=" " />
+                <h2>User Research and Analysis</h2>
+                <p>Understanding user needs and behaviors through methods like surveys and interviews to inform design decisions and create user personas.</p>
+            </div>
         </div>
 
         <div className="mt-6">
