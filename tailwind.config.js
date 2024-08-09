@@ -10,6 +10,9 @@ export default {
         black: 'hsl(var(--color-black) / <alpha-value>)',
         grey: 'hsl(var(--color-grey) / <alpha-value>)',
         whitish: 'hsl(var(--color-whitish) / <alpha-value>)',
+      },
+      borderRadius:{
+        'button':'3.37px',
       }
     },
   },
