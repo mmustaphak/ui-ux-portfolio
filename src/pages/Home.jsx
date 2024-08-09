@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Home() {
   return (
     <section className="pt-16 px-6 pb-6">
