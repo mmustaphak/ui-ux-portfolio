@@ -22,9 +22,9 @@ export default function Home() {
             {/* Project Cards */}
         </div>
 
-        <div className="mt-6">
-            <p>Redesign your Existing website with me.</p>
-            <button>Get In Touch</button>
+        <div className="mt-6 flex flex-col justify-center items-center min-h-[135px] w-full rounded-lg text-white bg-black bg-[url('src/assets/corner-logo-top.svg'),_url('src/assets/corner-logo-bottom.svg')] bg-[position:top_right,_bottom_left] bg-no-repeat">
+            <p className="text-[12px] font-medium">Redesign your Existing website with me.</p>
+            <button className="w-fit mt-2 py-1 px-[33px] rounded-button font-medium text-[10.11px] text-black bg-white">Get In Touch</button>
         </div>
 
         <div className="mt-6">
