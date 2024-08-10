@@ -12,7 +12,7 @@ export default function Layout() {
     const year = new Date().getFullYear()
 
     return (
-        <div className="flex flex-col text-center text-grey">
+        <div className="flex flex-col text-center text-grey bg-[url('src/assets/background-logo.svg')] bg-[position:center_4%] bg-no-repeat">
             <nav className="px-6 py-4 flex justify-between">
                 <Link to="/">
                     <img src={logo} alt="Mufteey Logo" />

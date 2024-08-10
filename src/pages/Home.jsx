@@ -12,7 +12,7 @@ export default function Home() {
                 <button className="mt-6 px-[42px] py-1 rounded-[3.37px] text-[10px] text-white bg-black">Let&apos;s Talk</button>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-16">
                 <h1 className="text-black font-semibold">My Services</h1>
                 <p>Transforming visions into captivating realities where design meets innovation for an exceptional UI/UX journey.</p>
                 <Services />
