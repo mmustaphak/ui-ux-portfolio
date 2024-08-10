@@ -2,8 +2,16 @@ import { Link, NavLink } from "react-router-dom"
 import logo from "../assets/logo.svg"
 import menu from "../assets/menu.svg"
 import close from "../assets/close-hamburger.svg"
+import { useState } from "react"
 
 export default function Header() {
+
+    const [isHamburger, setIsHamburger] = useState(false)
+
+    function handleToggle() {
+        setIsHamburger(oldIsHamburger => !oldIsHamburger)
+    }
+
 
     return (
         <header>
@@ -11,13 +19,18 @@ export default function Header() {
                 <Link to="/">
                     <img src={logo} alt="Mufteey Logo" />
                 </Link>
-                <img src={menu} alt="Open menu" />
+
+                <button onClick={handleToggle}>
+                    <img src={menu} alt="Open menu" />
+                </button>
             </nav>
 
-            <nav className="fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white">
-                <button className="self-start">
+            <nav className={`${isHamburger === false && "hidden"} fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white`}>
+
+                <button onClick={handleToggle} className="self-start">
                     <img src={close} alt="Close " />
                 </button>
+
                 <ul className="mt-7">
                     <NavLink to="about">
                         <li className="mx-auto w-fit text-center">About</li>
