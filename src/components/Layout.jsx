@@ -1,10 +1,9 @@
-import { Link, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { FaTwitter } from "react-icons/fa";
 import { LiaBehance } from "react-icons/lia";
 import { PiLinkedinLogoFill } from "react-icons/pi";
-import logo from "../assets/logo.svg"
-import menu from "../assets/menu.svg"
+import Header from "./Header";
 import GetInTouchForm from "./GetInTouchForm";
 
 export default function Layout() {
@@ -13,12 +12,8 @@ export default function Layout() {
 
     return (
         <div className="flex flex-col text-center text-grey bg-[url('src/assets/background-logo.svg')] bg-[position:center_4%] bg-no-repeat">
-            <nav className="px-6 py-4 flex justify-between">
-                <Link to="/">
-                    <img src={logo} alt="Mufteey Logo" />
-                </Link>
-                <img src={menu} alt="Open menu" />
-            </nav>
+            
+            <Header />
 
             <Outlet />
 
