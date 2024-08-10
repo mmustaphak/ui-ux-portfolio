@@ -14,22 +14,22 @@ export default function Header() {
                 <img src={menu} alt="Open menu" />
             </nav>
 
-            <nav>
-                <button>
+            <nav className="fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white">
+                <button className="self-start">
                     <img src={close} alt="Close " />
                 </button>
-                <ul>
+                <ul className="mt-7">
                     <NavLink to="about">
-                        <li>About</li>
+                        <li className="mx-auto w-fit text-center">About</li>
                     </NavLink>
                     <NavLink to="services">
-                        <li>Services</li>
+                        <li className="mt-7 mx-auto w-fit text-center">Services</li>
                     </NavLink>
                     <NavLink to="portfolio">
-                        <li>Portfolio</li>
+                        <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
                     </NavLink>
                     <NavLink to="blog">
-                        <li>Blog</li>
+                        <li className="mt-7 mx-auto w-fit text-center">Blog</li>
                     </NavLink>
                 </ul>
             </nav>
