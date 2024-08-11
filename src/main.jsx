@@ -4,11 +4,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './index.css'
 import Layout from './components/Layout'
 import Index from './pages/Home'
+import Portfolio from './pages/Portfolio'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
         <Route index element={<Index />}/>
+        <Route path="portfolio" element={<Portfolio />}/>
     </Route>
   )
 )
