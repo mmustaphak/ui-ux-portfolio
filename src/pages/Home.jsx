@@ -13,8 +13,6 @@ export default function Home() {
             </div>
 
             <div className="mt-16">
-                <h1 className="text-black font-semibold">My Services</h1>
-                <p>Transforming visions into captivating realities where design meets innovation for an exceptional UI/UX journey.</p>
                 <Services />
             </div>
 
