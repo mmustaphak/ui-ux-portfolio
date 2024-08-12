@@ -32,16 +32,16 @@ export default function Header() {
                 </button>
 
                 <ul className="mt-7">
-                    <NavLink to="about">
+                    <NavLink to="about" onClick={handleToggle}>
                         <li className="mx-auto w-fit text-center">About</li>
                     </NavLink>
-                    <NavLink to="services">
+                    <NavLink to="services" onClick={handleToggle}>
                         <li className="mt-7 mx-auto w-fit text-center">Services</li>
                     </NavLink>
-                    <NavLink to="portfolio">
+                    <NavLink to="portfolio" onClick={handleToggle}>
                         <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
                     </NavLink>
-                    <NavLink to="blog">
+                    <NavLink to="blog" onClick={handleToggle}>
                         <li className="mt-7 mx-auto w-fit text-center">Blog</li>
                     </NavLink>
                 </ul>
