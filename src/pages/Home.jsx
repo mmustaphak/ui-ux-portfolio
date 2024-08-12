@@ -1,7 +1,6 @@
 import Services from "../components/Services"
 import Resume from "../components/Resume"
-import projectImg from "../assets/portfolio-project.png"
-
+import Portfolio from "../components/Portfolio"
 export default function Home() {
     return (
         <section className="pt-16 px-6 pb-6">
@@ -19,17 +18,7 @@ export default function Home() {
             </div>
 
             <div className="mt-6">
-                <h1 className="text-black font-semibold">My Portfolio Projects</h1>
-                <p>Explore the artistry and precision in my portfolio projects</p>
-                {/* Project Cards */}
-                <a href="">
-                    <div className="mt-4">
-                        <div className="p-7 rounded-lg bg-whitish">
-                            <img className="mx-auto" src={projectImg} alt="The Bee Charge Design Project" />
-                        </div>
-                        <h2 className="mt-3 font-semibold text-left text-black">The Bee Charge Design</h2>
-                    </div>
-                </a>
+                <Portfolio />
             </div>
 
             <div className="mt-6 flex flex-col justify-center items-center min-h-[135px] w-full rounded-lg text-white bg-black bg-[url('src/assets/corner-logo-top.svg'),_url('src/assets/corner-logo-bottom.svg')] bg-[position:top_right,_bottom_left] bg-no-repeat">
