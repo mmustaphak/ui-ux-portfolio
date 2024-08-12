@@ -20,6 +20,8 @@ const renderedServices = servicesDataArr.map(service => (
 export default function Services() {
     return (
         <>
+            <h1 className="text-black font-semibold">My Services</h1>
+            <p>Transforming visions into captivating realities where design meets innovation for an exceptional UI/UX journey.</p>
             {renderedServices}
         </>
     )

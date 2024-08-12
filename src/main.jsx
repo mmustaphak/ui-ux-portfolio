@@ -6,6 +6,7 @@ import Layout from './components/Layout'
 import Index from './pages/Home'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
+import Services from './pages/Services'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
         <Route index element={<Index />}/>
         <Route path="about" element={<About />}/>
         <Route path="portfolio" element={<Portfolio />}/>
+        <Route path="services" element={<Services />}/>
     </Route>
   )
 )
