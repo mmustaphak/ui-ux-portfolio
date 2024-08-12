@@ -4,11 +4,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './index.css'
 import Layout from './components/Layout'
 import Index from './pages/Home'
+import About from './pages/About'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
         <Route index element={<Index />}/>
+        <Route path="about" element={<About />}/>
     </Route>
   )
 )
