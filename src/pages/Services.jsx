@@ -1,9 +1,9 @@
-import ServicesComponent from "../components/Services"
+import ServicesComponent from "../components/Services";
 
 export default function Services() {
   return (
     <section>
-        <ServicesComponent />
+      <ServicesComponent />
     </section>
-  )
+  );
 }
