@@ -16,7 +16,10 @@ export default function Layout() {
 
             <Header />
 
-            <Outlet />
+            <div className="pt-16 px-6 pb-6">
+                <Outlet />
+            </div>
+
 
             <div>
                 <h1 className="text-black font-semibold">Get In Touch</h1>
