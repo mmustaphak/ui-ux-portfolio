@@ -15,15 +15,33 @@ export default function Header() {
 
     return (
         <header>
-            <nav className="px-6 py-4 flex justify-between">
-                <Link to="/">
-                    <img src={logo} alt="Mufteey Logo" />
+            <nav className="px-6 py-4 flex justify-between items-center min-[480px]:pt-[2.5rem]">
+                <Link className="" to="/">
+                    <img className="min-[480px]:w-14" src={logo} alt="Mufteey Logo" />
                 </Link>
 
-                <button onClick={handleToggle}>
+                <ul className="hidden justify-between self-center w-full max-w-64 min-[480px]:flex min-[550px]:max-w-[20rem]">
+                    <li>
+                        <NavLink to="about">About</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="services">Services</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="porfolio">Portfolio</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/">Blog</NavLink>
+                    </li>
+                </ul>
+
+                <button className="hidden py-2 px-6 rounded-md font-medium text-white bg-black min-[480px]:block">Hire Me</button>
+
+                <button className="min-[480px]:hidden" onClick={handleToggle}>
                     <img src={menu} alt="Open menu" />
                 </button>
             </nav>
+
 
             <nav className={`${isHamburger === false && "hidden"} fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white`}>
 
@@ -46,6 +64,6 @@ export default function Header() {
                     </NavLink>
                 </ul>
             </nav>
-        </header>
+        </header >
     )
 }
