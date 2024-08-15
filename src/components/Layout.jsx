@@ -18,13 +18,13 @@ export default function Layout() {
             <div className="max-w-[1110px] mx-auto">
                 <Header /> 
                 <Outlet />
+                <div className="">
+                    <h1 className="text-black font-semibold min-[480px]:text-2xl lg:text-[2.5rem]">Get In Touch</h1>
+                    <p className="lg:pt-8 lg:text-[2rem]">Let’s create something extraordinary- Get In Touch</p>
+                    <GetInTouchForm />
+                </div>
             </div>
 
-            <div>
-                <h1 className="text-black font-semibold">Get In Touch</h1>
-                <p>Let’s create something extraordinary- Get In Touch</p>
-                <GetInTouchForm />
-            </div>
 
             <footer className="flex flex-col justify-center mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black">
                 <div className="flex mx-auto">
