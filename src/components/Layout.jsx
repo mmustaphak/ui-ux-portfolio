@@ -14,9 +14,11 @@ export default function Layout() {
     return (
         <div className="flex flex-col text-center text-grey bg-[url('src/assets/background-logo.svg')] bg-[position:center_4%] bg-no-repeat">
 
-            <Header />
 
-            <Outlet />
+            <div className="max-w-[1110px] mx-auto">
+                <Header /> 
+                <Outlet />
+            </div>
 
             <div>
                 <h1 className="text-black font-semibold">Get In Touch</h1>
