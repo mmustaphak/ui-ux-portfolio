@@ -15,12 +15,12 @@ export default function Header() {
 
     return (
         <header>
-            <nav className="px-6 py-4 flex justify-between items-center min-[480px]:pt-[2.5rem]">
+            <nav className="px-6 py-4 flex justify-between items-center min-[480px]:pt-[2.5rem] lg:pt-[65px]">
                 <Link className="" to="/">
-                    <img className="min-[480px]:w-14" src={logo} alt="Mufteey Logo" />
+                    <img className="min-[480px]:w-14 lg:w-[85px]" src={logo} alt="Mufteey Logo" />
                 </Link>
 
-                <ul className="hidden justify-between self-center w-full max-w-64 min-[480px]:flex min-[550px]:max-w-[20rem]">
+                <ul className="hidden justify-between self-center w-full max-w-64 min-[480px]:flex min-[550px]:max-w-[20rem] min-[550px]:text-lg md:max-w-[25rem] lg:max-w-[575px] lg:text-2xl">
                     <li>
                         <NavLink to="about">About</NavLink>
                     </li>
@@ -35,7 +35,7 @@ export default function Header() {
                     </li>
                 </ul>
 
-                <button className="hidden py-2 px-6 rounded-md font-medium text-white bg-black min-[480px]:block">Hire Me</button>
+                <button className="hidden py-2 px-6 rounded-md font-medium text-white bg-black min-[480px]:block md:px-8 lg:py-[10px] lg:px-[58px]">Hire Me</button>
 
                 <button className="min-[480px]:hidden" onClick={handleToggle}>
                     <img src={menu} alt="Open menu" />
