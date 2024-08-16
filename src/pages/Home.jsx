@@ -3,12 +3,12 @@ import Resume from "../components/Resume"
 import Portfolio from "../components/Portfolio"
 export default function Home() {
     return (
-        <section >
-            <div>
-                <h1 className="text-black font-semibold">My name is Mustapha Danladi</h1>
-                <p className="pt-2">A UI/UX Designer currently designing thoughtful experience, beautiful websites, products, and design system to help designers, product managers and engineers to collaborate together.</p>
+        <section>
+            <div className="lg:mt-56">
+                <h1 className="text-black font-semibold md:text-2xl lg:text-[40px]">My name is Mustapha Danladi</h1>
+                <p className="mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">A UI/UX Designer currently designing thoughtful experience, beautiful websites, products, and design system to help designers, product managers and engineers to collaborate together.</p>
 
-                <button className="mt-6 px-[42px] py-1 rounded-[3.37px] text-[10px] text-white bg-black">Let&apos;s Talk</button>
+                <button className="mt-6 px-[42px] py-1 rounded-[3.37px] text-[10px] text-white bg-black md:mt-7 lg:mt-8 md:text-xl md:py-[5px] md:px-[75px] md:rounded-md lg:py-[10px] lg:px-[150px] lg:text-2xl lg:rounded-lg">Let&apos;s Talk</button>
             </div>
 
             <div className="mt-16">

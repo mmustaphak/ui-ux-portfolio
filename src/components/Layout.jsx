@@ -19,7 +19,7 @@ export default function Layout() {
                 <Header /> 
 
                 
-                <div className="pt-16 px-6 pb-6">
+                <div className="pt-16 px-6 pb-6 lg:px-0">
                     <Outlet />
                 </div>
 
