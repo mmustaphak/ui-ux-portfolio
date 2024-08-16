@@ -3,7 +3,7 @@ import Resume from "../components/Resume"
 
 export default function Portfolio() {
     return (
-        <section className="pt-16 px-6 pb-6">
+        <section>
             <PortfolioComponent />
             <Resume />
         </section>

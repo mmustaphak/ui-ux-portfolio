@@ -3,7 +3,7 @@ import Resume from "../components/Resume"
 import Portfolio from "../components/Portfolio"
 export default function Home() {
     return (
-        <section className="pt-16 px-6 pb-6">
+        <section >
             <div>
                 <h1 className="text-black font-semibold">My name is Mustapha Danladi</h1>
                 <p className="pt-2">A UI/UX Designer currently designing thoughtful experience, beautiful websites, products, and design system to help designers, product managers and engineers to collaborate together.</p>

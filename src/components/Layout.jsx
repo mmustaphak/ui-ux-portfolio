@@ -17,8 +17,13 @@ export default function Layout() {
 
             <div className="max-w-[1110px] mx-auto">
                 <Header /> 
-                <Outlet />
-                <div className="">
+
+                
+                <div className="pt-16 px-6 pb-6">
+                    <Outlet />
+                </div>
+
+                <div>
                     <h1 className="text-black font-semibold min-[480px]:text-2xl lg:text-[2.5rem]">Get In Touch</h1>
                     <p className="lg:pt-8 lg:text-[2rem]">Let’s create something extraordinary- Get In Touch</p>
                     <GetInTouchForm />
