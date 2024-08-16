@@ -12,10 +12,10 @@ export default function Layout() {
     const year = new Date().getFullYear()
 
     return (
-        <div className="flex flex-col text-center text-grey bg-[url('src/assets/background-logo.svg')] bg-[position:center_4%] bg-no-repeat">
+        <div className="flex flex-col text-center text-grey bg-[url('src/assets/background-logo.svg')] bg-[position:center_4%] bg-no-repeat lg:px-[110px]">
 
 
-            <div className="max-w-[1110px] mx-auto">
+            <div className="max-w-[1220px] mx-auto">
                 <Header /> 
 
                 

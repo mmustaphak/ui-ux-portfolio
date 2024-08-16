@@ -11,7 +11,7 @@ export default function Home() {
                 <button className="mt-6 px-[42px] py-1 rounded-[3.37px] text-[10px] text-white bg-black md:mt-7 lg:mt-8 md:text-xl md:py-[5px] md:px-[75px] md:rounded-md lg:py-[10px] lg:px-[150px] lg:text-2xl lg:rounded-lg">Let&apos;s Talk</button>
             </div>
 
-            <div className="mt-16">
+            <div className="mt-16 mx-auto lg:mt-[178px] ">
                 <Services />
             </div>
 
