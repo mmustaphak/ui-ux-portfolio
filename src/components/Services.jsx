@@ -22,7 +22,7 @@ export default function Services() {
         <>
             <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">My Services</h1>
             <p className="mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">Transforming visions into captivating realities where design meets innovation for an exceptional UI/UX journey.</p>
-            <div className="grid mx-auto justify-center md:grid-cols-2 md:gap-5 mt-2 md:max-w-[700px] lg:max-w-none lg:gap-10 lg:mt-8">
+            <div className="grid mx-auto mt-2  justify-center md:grid-cols-2 md:gap-5 md:px-12 md:max-w-[700px] lg:max-w-none lg:gap-10 lg:mt-8">
                 {renderedServices}
             </div>
         </>
