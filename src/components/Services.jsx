@@ -1,4 +1,4 @@
-import figma from "../assets/figma.svg"
+import figma from "../assets/figma.svg";
 
 const servicesDataArr = [
     { title: "User Research and Analysis", description: "Understanding user needs and behaviors through methods like surveys and interviews to inform design decisions and create user personas." },

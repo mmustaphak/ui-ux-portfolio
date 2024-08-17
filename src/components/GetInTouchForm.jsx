@@ -21,5 +21,5 @@ export default function GetInTouchForm() {
 
         <button className="self-start py-1 px-[52px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white md:py-2 md:px-[90px] md:text-[18px] md:rounded-md bg-black md:font-semibold lg:pt-[10px] lg:px-[173px] lg:text-2xl lg:rounded-lg" type="submit">Send</button>
     </Form>
-  )
+  );
 }

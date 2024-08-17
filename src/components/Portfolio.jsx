@@ -1,4 +1,4 @@
-import projectImg from "../assets/portfolio-project.png"
+import projectImg from "../assets/portfolio-project.png";
 
 export default function Portfolio() {
     return (
