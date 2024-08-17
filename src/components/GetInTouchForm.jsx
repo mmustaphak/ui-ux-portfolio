@@ -5,7 +5,7 @@ figure out how to push the submit button to the left*/
 
 export default function GetInTouchForm() {
   return (
-    <Form className="px-4 flex flex-col mx-auto md:my-6 lg:px-0 lg:my-[50px] lg:w-[90%]">
+    <Form className="px-4 flex flex-col mx-auto md:my-6 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]">
       <label className="block font-medium text-left text-black md:mt-6 lg:text-2xl">
         Name <br />
         <input

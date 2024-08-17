@@ -15,7 +15,7 @@ export default function Layout() {
       <div className="max-w-[1220px] mx-auto">
         <Header />
 
-        <div className="pt-16 px-6 pb-6 lg:px-0">
+        <div className="pt-16 px-6 pb-6 md:px-8">
           <Outlet />
         </div>
 
@@ -30,7 +30,7 @@ export default function Layout() {
         </div>
       </div>
 
-      <footer className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black min-[480px]:text-lg  min-[480px]:px-16 min-[480px]:pt-16 min-[480px]:pb-9 lg:px-[110px] lg:pt-[96px] lg:pb-[50px] lg:text-2xl">
+      <footer className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black min-[480px]:text-lg min-[480px]:px-16 min-[480px]:pt-16 min-[480px]:pb-9 lg:px-[110px] lg:pt-[96px] lg:pb-[50px] lg:text-2xl">
         <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
           <div className="flex mx-auto min-[480px]:min-w-[220px] lg:min-w-[300px]">
             <img className="mr-1 md:mr-2 lg:mr-3" src={logo} alt=" " />
