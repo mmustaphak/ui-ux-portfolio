@@ -5,7 +5,7 @@ figure out how to push the submit button to the left*/
 
 export default function GetInTouchForm() {
   return (
-    <Form className="p-4 flex flex-col md:pt-6 lg:pt-8">
+    <Form className="p-4 flex flex-col mx-auto md:pt-6 lg:p-0 lg:w-[90%] lg:pt-8">
         <label className="block font-medium text-left text-black lg:text-2xl">
             Name <br />
                 <input className="w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3" type="text" placeholder="Enter your name here" />
