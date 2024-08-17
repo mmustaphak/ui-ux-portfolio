@@ -9,7 +9,7 @@ export default function GetInTouchForm() {
       <label className="block font-medium text-left text-black md:mt-6 lg:text-2xl">
         Name <br />
         <input
-          className="w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3"
+          className="w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
           type="text"
           placeholder="Enter your name here"
         />
@@ -17,7 +17,7 @@ export default function GetInTouchForm() {
       <label className="block mt-4 font-medium text-left text-black md:mt-6 lg:mt-8 lg:text-2xl">
         Email Address <br />
         <input
-          className="w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3"
+          className="w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
           type="email"
           placeholder="Enter your name here"
         />
@@ -25,7 +25,7 @@ export default function GetInTouchForm() {
       <label className="block mt-4 font-medium text-left text-black md:mt-6 lg:mt-8 lg:text-2xl">
         Message <br />
         <textarea
-          className="w-full min-h-[119px] resize-none py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:min-h-[270px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3"
+          className="w-full min-h-[119px] resize-none py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[270px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
           placeholder="Drop you message here"
         ></textarea>
       </label>
