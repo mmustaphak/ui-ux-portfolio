@@ -23,7 +23,7 @@ export default function Home() {
         <Services />
       </div>
 
-      <div className="mt-6 lg:mt-[50px]">
+      <div className="mt-6 md:mt-8 lg:mt-[50px]">
         <Portfolio />
       </div>
 
@@ -36,9 +36,9 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="mt-6">
-        <h1 className="text-black font-semibold">Testimonial</h1>
-        <p>Testimonials Speak louder than words.</p>
+      <div className="mt-6 md:mt-8 lg:mt-[50px]">
+        <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">Testimonial</h1>
+        <p className="mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">Testimonials Speak louder than words.</p>
         {/* Gallery Component */}
       </div>
 
