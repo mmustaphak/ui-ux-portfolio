@@ -27,7 +27,7 @@ export default function Home() {
         <Portfolio />
       </div>
 
-      <div className="mt-6 flex flex-col justify-center mx-auto items-center min-h-[135px] w-full rounded-lg text-white bg-black bg-[url('src/assets/corner-logo-top.svg'),_url('src/assets/corner-logo-bottom.svg')] bg-[position:top_right,_bottom_left] bg-no-repeat md:py-[70px] lg:py-[136px] lg:bg-[position:101%_0%,-1%_100%] lg:bg-[size:234px_166px]">
+      <div className="mt-6 flex flex-col justify-center mx-auto items-center min-h-[135px] w-full rounded-lg text-white bg-black bg-[url('src/assets/corner-logo-top.svg'),_url('src/assets/corner-logo-bottom.svg')] bg-[position:top_right,_bottom_left] bg-no-repeat md:py-[70px] md:bg-[position:104%_0%,-4%_100%] md:bg-[size:19%_32%] lg:py-[136px] lg:bg-[position:104%_0%,-4%_100%] min-[1488px]:bg-[size:234px_166px] min-[1488px]:bg-[position:101%_0%,-1%_100%]">
         <p className="text-[12px] font-medium md:text-2xl lg:text-[2.5rem]">
           Redesign your Existing website with me.
         </p>
