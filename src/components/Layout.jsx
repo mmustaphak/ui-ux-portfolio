@@ -15,7 +15,7 @@ export default function Layout() {
       <div className="max-w-[1220px] mx-auto">
         <Header />
 
-        <div className="pt-16 px-6 pb-6 md:px-8">
+        <div className="pt-16 px-6 pb-6 md:px-8 min-[1250px]:px-0">
           <Outlet />
         </div>
 
