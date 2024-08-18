@@ -14,7 +14,7 @@ export default function Home() {
           managers and engineers to collaborate together.
         </p>
 
-        <button className="mt-6 px-[42px] py-1 rounded-[3.37px] text-[10px] text-white bg-black md:mt-7 lg:mt-8 md:text-xl md:py-[5px] md:px-[75px] md:rounded-md lg:py-[10px] lg:px-[150px] lg:text-2xl lg:rounded-lg">
+        <button className="mt-6 py-0.5 w-full max-w-[110px] min-[375px]:max-w-[130px] min-[500px]:py-2 rounded-[3.37px] text-[10px] text-white bg-black  md:mt-7 lg:mt-8 md:text-xl md:max-w-[280px] md:px-0 md:rounded-md lg:max-w-[409px] lg:py-[10px] lg:text-2xl lg:rounded-lg">
           Let&apos;s Talk
         </button>
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
         <p className="text-[12px] font-medium md:text-2xl lg:text-[2.5rem]">
           Redesign your Existing website with me.
         </p>
-        <button className="w-fit mt-2 py-1 px-[33px] rounded-button font-medium text-[10.11px] text-black bg-white md:text-lg md:mt-4 lg:text-[1.5rem] lg:mt-8 lg:px-[130px] lg:py-[10px]">
+        <button className="mt-2 py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] rounded-button font-medium text-[10.11px] text-black bg-white md:text-lg md:px-0 md:mt-4 lg:text-[1.5rem] lg:mt-8 lg:py-[10px] md:py-1 md:max-w-[280px] lg:max-w-[409px]">
           Get In Touch
         </button>
       </div>
