@@ -23,7 +23,7 @@ export default function Layout() {
           <h1 className="text-black font-semibold min-[480px]:text-2xl lg:text-[2.5rem]">
             Get In Touch
           </h1>
-          <p className="lg:pt-8 lg:text-[2rem]">
+          <p className="text-[0.75rem] lg:pt-8 lg:text-[2rem]">
             Let’s create something extraordinary- Get In Touch
           </p>
           <GetInTouchForm />
@@ -34,7 +34,7 @@ export default function Layout() {
         <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
           <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
             <img className="min-[480px]:min-w-6 lg:min-w-[55px] lg:min-h-10" src={logo} alt=" " />
-            <p className="text-[0.38rem] min-[480px]:text-[0.55rem] lg:text-2xl md:text-[0.7rem]">Mufteey&apos;s Design</p>
+            <p className="text-[0.38rem] md:text-xl lg:text-2xl md:text-[0.7rem]">Mufteey&apos;s Design</p>
           </div>
 
           <div className="self-center flex justify-between mt-4 w-full max-w-[154px] text-base min-[480px]:max-w-[185px] lg:mt-[53px] lg:max-w-[552px]">
