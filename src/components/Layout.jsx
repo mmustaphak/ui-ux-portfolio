@@ -30,37 +30,37 @@ export default function Layout() {
         </div>
       </div>
 
-      <footer className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black min-[480px]:text-lg min-[480px]:px-16 min-[480px]:pt-16 min-[480px]:pb-9 lg:px-[110px] lg:pt-[96px] lg:pb-[50px] lg:text-2xl">
+      <footer className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]">
         <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
-          <div className="flex mx-auto min-[480px]:min-w-[220px] lg:min-w-[300px]">
-            <img className="mr-1 md:mr-2 lg:mr-3" src={logo} alt=" " />
-            <p className="lg:text-2xl">Mufteey&apos;s Design</p>
+          <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
+            <img className="min-[480px]:min-w-6 lg:min-w-[55px] lg:min-h-10" src={logo} alt=" " />
+            <p className="text-[0.38rem] min-[480px]:text-[0.55rem] lg:text-2xl md:text-[0.7rem]">Mufteey&apos;s Design</p>
           </div>
 
-          <div className="self-center flex justify-between mt-4 w-full max-w-[135px] text-base min-[480px]:mt-8 min-[480px]:max-w-[450px] lg:mt-[53px] lg:max-w-[552px]">
+          <div className="self-center flex justify-between mt-4 w-full max-w-[154px] text-base min-[480px]:max-w-[185px] lg:mt-[53px] lg:max-w-[552px]">
             <a href="">
-              <BiLogoInstagramAlt className="min-[480px]:size-[25px] md:size-[30px] lg:size-[48px]" />
+              <BiLogoInstagramAlt className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
             <a href="">
-              <FaTwitter className="min-[480px]:size-[25px] md:size-[30px] lg:size-[48px]" />
+              <FaTwitter className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
             <a href="">
-              <PiLinkedinLogoFill className="min-[480px]:size-[25px] md:size-[30px] lg:size-[48px]" />
+              <PiLinkedinLogoFill className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
             <a href="">
-              <LiaBehance className="min-[480px]:size-[25px] md:size-[30px] lg:size-[48px]" />
+              <LiaBehance className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
           </div>
 
           <div>
             <div className="mt-4 flex justify-between min-[480px]:mt-10 lg:mt-[63px]">
               <select
-                className={`appearance-none pr-3 bg-transparent bg-[url('./src/assets/menu-down.svg')] bg-[position:center_right] bg-no-repeat min-[480px]:bg-[size:18px] min-[480px]:min-w-[5.5rem] lg:min-w-[7rem] lg:bg-[size:24px]`}
+                className="appearance-none text-[0.38rem] w-full max-w-[32px] bg-transparent bg-[url('./src/assets/menu-down.svg')] bg-[position:center_right] bg:[size:6.21px] bg-no-repeat min-[480px]:bg-[size:14px] min-[480px]:max-w-[40px] min-[480px]:text-[0.55rem] md:max-w-[70px] lg:max-w-[120px] lg:bg-[size:24px] lg:text-2xl md:text-[0.7rem]"
                 name="language"
               >
                 <option value="English">English</option>
               </select>
-              <p>{year} Mufteey. All right reserved</p>
+              <p className="text-[0.38rem] min-[480px]:text-[0.55rem] lg:text-2xl md:text-[0.7rem]">{year} Mufteey. All right reserved</p>
             </div>
           </div>
         </div>
