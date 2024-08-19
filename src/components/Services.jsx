@@ -19,34 +19,38 @@ const servicesDataArr = [
   {
     title: "Usability Testing and Iteration",
     description:
-      "Crafting the aesthetic elements of a digital interface, including color, typography, and imagery, to ensure a visually appealing.",
-  },
-  {
-    title: "Usability Testing and Iteration",
-    description:
       "Evaluating the effectiveness of a design through testing with real users, collecting feedback, and making iterative improvements.",
   },
 ];
 
 const renderedServices = servicesDataArr.map((service) => (
-  <div key={service.title} className="mt-2 py-8 px-5 rounded-lg bg-whitish">
-    <img className="mx-auto" src={figma} alt=" " />
-    <h2 className="font-medium text-[13.3px] text-black mt-[18px]">
+  <div
+    key={service.title}
+    className="mt-2 py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]"
+  >
+    <img className="mx-auto lg:size-[109px]" src={figma} alt=" " />
+    <h2 className="font-medium text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
       {service.title}
     </h2>
-    <p className="text-[13.3px] mt-2">{service.description}</p>
+    <p className="text-[13.3px] mt-2 lg:mt-4 lg:text-[1.25rem]">
+      {service.description}
+    </p>
   </div>
 ));
 
 export default function Services() {
   return (
     <>
-      <h1 className="text-black font-semibold">My Services</h1>
-      <p>
+      <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
+        My Services
+      </h1>
+      <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
         Transforming visions into captivating realities where design meets
         innovation for an exceptional UI/UX journey.
       </p>
-      {renderedServices}
+      <div className="grid mx-auto mt-2  justify-center md:grid-cols-2 md:gap-5 md:max-w-[700px] lg:max-w-none lg:gap-10 lg:mt-8">
+        {renderedServices}
+      </div>
     </>
   );
 }
