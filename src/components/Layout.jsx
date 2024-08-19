@@ -23,7 +23,7 @@ export default function Layout() {
           <h1 className="text-black font-semibold min-[480px]:text-2xl lg:text-[2.5rem]">
             Get In Touch
           </h1>
-          <p className="text-[0.75rem] lg:pt-8 lg:text-[2rem]">
+          <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
             Let’s create something extraordinary- Get In Touch
           </p>
           <GetInTouchForm />
