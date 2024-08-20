@@ -15,7 +15,7 @@ export default function Layout() {
       <div className="max-w-[1220px] mx-auto">
         <Header />
 
-        <div className="pt-16 px-6 pb-6 bg-[url('src/assets/background-logo.svg')] bg-[size:min(89%,350px)] bg-[position:center_0.8%] min-[400px]:bg-[position:center_0.4%] md:bg-[size:min(55%,817px)] bg-no-repeat lg:bg-[position:center_4%] lg:bg-[size:817px_579px] md:px-8 min-[1250px]:px-0">
+        <div className="mt-16 px-6 mb-6 bg-[url('src/assets/background-logo.svg')] bg-[size:min(89%,350px)] bg-[position:center_0.8%] min-[400px]:bg-[position:center_0.4%] md:bg-[size:min(55%,817px)] bg-no-repeat lg:bg-[position:center_4%] lg:bg-[size:817px_579px] md:mb-[35px] md:px-8 lg:mb-[50px] min-[1250px]:px-0">
           <Outlet />
         </div>
 
