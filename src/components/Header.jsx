@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <header>
-      <nav className="px-6 py-4 flex justify-between items-center min-[500px]:pt-[2.5rem] lg:pt-[65px]">
+      <nav className="px-6 py-4 flex justify-between items-center min-[500px]:pt-[2.5rem] min-[500px]:pb-10 lg:pt-[65px]">
         <Link className="" to="/">
           <img
             className="min-[500px]:w-14 lg:w-[85px]"

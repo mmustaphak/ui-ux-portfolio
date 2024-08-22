@@ -11,11 +11,11 @@ export default function Layout() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="flex flex-col text-center text-grey bg-[url('src/assets/background-logo.svg')] bg-[position:center_4%] bg-no-repeat md:bg-[size:67%_10%] lg:bg-[position:center_7%] lg:bg-[size:817px_579px]">
+    <div className="flex flex-col text-center text-grey">
       <div className="max-w-[1220px] mx-auto">
         <Header />
 
-        <div className="pt-16 px-6 pb-6 md:px-8 min-[1250px]:px-0">
+        <div className="pt-16 px-6 mb-6 bg-[url('src/assets/background-logo.svg')] bg-[size:min(89%,350px)] bg-[position:center_16px] min-[400px]:bg-[position:center_top] md:bg-[size:55%] md:bg-[position:center_25px] lg:pt-[239px]  bg-no-repeat  lg:bg-[size:817px_579px] lg:bg-[position:center_80px] md:mb-[35px] md:px-8 lg:mb-[50px] min-[1250px]:px-0">
           <Outlet />
         </div>
 
