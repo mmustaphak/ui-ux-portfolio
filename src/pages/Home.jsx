@@ -4,7 +4,7 @@ import Portfolio from "../components/Portfolio";
 export default function Home() {
   return (
     <section>
-      <div className="lg:mt-56">
+      <div>
         <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
           My name is Mustapha Danladi
         </h1>
