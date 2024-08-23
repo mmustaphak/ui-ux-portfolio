@@ -22,14 +22,23 @@ export default function Testimonial() {
         "Thanks to you and your team for bringing your passion and creativity to the design of #DevFest",
     },
   ];
-  return (
-    <div className="bg-whitish p-5 mt-2">
+
+  const renderedTestimonials = data.map((person) => (
+    <div
+      key={person}
+      className="min-w-[327px] bg-whitish p-5 mr-4 snap-center snap-always"
+    >
       <h3 className="font-semibold text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
-        From {data[0].person}
+        From {person.person}
       </h3>
       <p className="text-[11px] mt-2 lg:mt-4 lg:text-[1.25rem]">
-        {data[0].message}
+        {person.message}
       </p>
+    </div>
+  ));
+  return (
+    <div className="flex mt-2 overflow-x-scroll snap-x snap-mandatory">
+      {renderedTestimonials}
     </div>
   );
 }
