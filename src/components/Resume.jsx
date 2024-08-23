@@ -1,10 +1,6 @@
 export default function Resume() {
   return (
-<<<<<<< HEAD
-    <div className="mt-6 mx-auto py-3 px-4 flex justify-between items-center rounded-[4px] text-white bg-black md:py-8 md:px-10 md:rounded-lg lg:px-[60px] lg:rounded-2xl lg:py-[45px]">
-=======
     <div className="mt-6 mx-auto py-3 px-4 flex justify-between items-center rounded-[4px] text-white bg-black md:py-8 md:px-10 md:rounded-lg lg:mt-[50px] lg:px-[60px] lg:rounded-2xl lg:py-[45px]">
->>>>>>> main
       <p className="font-medium text-[8.58px] md:text-xl md:leading-[normal] lg:text-[1.4rem] min-[1134px]:text-[2rem]">
         Hey! Take a look at my resume
       </p>
