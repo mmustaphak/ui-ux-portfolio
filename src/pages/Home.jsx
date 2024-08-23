@@ -4,7 +4,7 @@ import Portfolio from "../components/Portfolio";
 export default function Home() {
   return (
     <section>
-      <div className="lg:mt-56">
+      <div>
         <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
           My name is Mustapha Danladi
         </h1>
@@ -37,8 +37,12 @@ export default function Home() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
-        <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">Testimonial</h1>
-        <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">Testimonials Speak louder than words.</p>
+        <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
+          Testimonial
+        </h1>
+        <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
+          Testimonials Speak louder than words.
+        </p>
         {/* Gallery Component */}
       </div>
 
