@@ -1,6 +1,7 @@
 import Services from "../components/Services";
 import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
+import Testimonial from "../components/Testimonial";
 export default function Home() {
   return (
     <section>
@@ -43,7 +44,7 @@ export default function Home() {
         <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
           Testimonials Speak louder than words.
         </p>
-        {/* Gallery Component */}
+        <Testimonial />
       </div>
 
       <Resume />
