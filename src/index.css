@@ -13,3 +13,11 @@
     --color-whitish: 200deg 17.65% 96.67%;
   }
 }
+
+.testimonial::-webkit-scrollbar{
+  display: none;
+}
+.testimonial{
+  -ms-overflow-style:none;
+  scrollbar-width: none;
+}

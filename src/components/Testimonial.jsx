@@ -23,9 +23,10 @@ export default function Testimonial() {
     },
   ];
 
-  const renderedTestimonials = data.map((person) => (
+  const renderedTestimonials = data.map((person,index) => (
     <div
       key={person}
+      id={index}
       className="min-w-[327px] bg-whitish p-5 mr-4 snap-center snap-always"
     >
       <h3 className="font-semibold text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
@@ -37,8 +38,10 @@ export default function Testimonial() {
     </div>
   ));
   return (
-    <div className="flex mt-2 overflow-x-scroll snap-x snap-mandatory">
-      {renderedTestimonials}
-    </div>
+    <>
+      <div className="testimonial relative flex mt-2 overflow-x-scroll snap-x snap-mandatory">
+        {renderedTestimonials}
+      </div>
+    </>
   );
 }
