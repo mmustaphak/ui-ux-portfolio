@@ -75,7 +75,7 @@ export default function Testimonial() {
         name="testimonials" 
         type="radio"
         onClick={()=>scrollToTestimonial(index)}
-        className="size-2 bg-[#D9D9D9] rounded-full appearance-none checked:bg-black checked:min-w-[23px]" 
+        className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out" 
         />
     )
   })
