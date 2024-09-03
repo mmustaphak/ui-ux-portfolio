@@ -46,14 +46,13 @@ export default function Testimonial() {
     })
   }
 
-
   const renderedTestimonials = data.map((testimonial, index) => (
     <div
-      key={testimonial}
+      key={testimonial.name}
       ref={node => {
         const map = getMap();
         if (node) {
-          map.set(testimonial.name, node);
+          map.set(index, node);
         } else {
           map.delete(testimonial)
         }
@@ -69,8 +68,8 @@ export default function Testimonial() {
     </div>
   ));
 
-  const navigationButtons = data.map(person => {
-    return (<button key={person} onClick={()=>scrollToTestimonial(person.name)} className="size-2 bg-[#D9D9D9] rounded-full"></button>)
+  const navigationButtons = data.map((person, index) => {
+    return (<button key={person.name} onClick={()=>scrollToTestimonial(index)} className="size-2 bg-[#D9D9D9] rounded-full"></button>)
   })
 
 
