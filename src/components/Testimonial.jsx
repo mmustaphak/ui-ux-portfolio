@@ -41,8 +41,8 @@ export default function Testimonial() {
     const node = map.get(testimonial)
     node.scrollIntoView({
       behavior: "smooth",
-      block:"nearest",
-      inline:"center",
+      block: "nearest",
+      inline: "center",
     })
   }
 
@@ -69,7 +69,15 @@ export default function Testimonial() {
   ));
 
   const navigationButtons = data.map((person, index) => {
-    return (<button key={person.name} onClick={()=>scrollToTestimonial(index)} className="size-2 bg-[#D9D9D9] rounded-full"></button>)
+    return (
+      <input 
+        key={index} 
+        name="testimonials" 
+        type="radio"
+        onClick={()=>scrollToTestimonial(index)}
+        className="size-2 bg-[#D9D9D9] rounded-full appearance-none checked:bg-black checked:min-w-[23px]" 
+        />
+    )
   })
 
 
@@ -78,7 +86,7 @@ export default function Testimonial() {
       <div className="testimonial relative flex mt-2 overflow-x-scroll snap-x snap-mandatory">
         {renderedTestimonials}
       </div>
-      <div className="flex justify-between mx-auto max-w-[75px]">
+      <div className="flex justify-between mx-auto mt-2 max-w-[75px]">
         {navigationButtons}
       </div>
     </>
