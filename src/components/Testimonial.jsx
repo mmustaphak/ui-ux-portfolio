@@ -78,13 +78,13 @@ export default function Testimonial() {
         const nodeRef = map.get(index)
         observer.observe(nodeRef)
       }}
-      className={`testimonial${index} min-w-[327px] bg-whitish p-5 mr-4 snap-center snap-always`}
+      className={`testimonial${index} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
       data-index={index}
     >
-      <h3 className="font-semibold text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
+      <h3 className="text-[13.3px] text-black font-semibold md:text-2xl lg:text-[2.5rem]">
         From {testimonial.name}
       </h3>
-      <p className="text-[11px] mt-2 lg:mt-4 lg:text-[1.25rem]">
+      <p className="mt-2 text-[.6875rem] mx-auto max-w-[412px] md:max-w-[700px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-6 lg:max-w-full lg:text-[2rem]">
         {testimonial.message}
       </p>
     </div>
@@ -97,7 +97,7 @@ export default function Testimonial() {
         name="testimonials"
         type="radio"
         onClick={() => scrollToTestimonial(index)}
-        className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out"
+        className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out md:size-3 md:hover:min-w-[30px] md:checked:min-w-[44px] lg:size-4 lg:hover:min-w-[55px] lg:checked:min-w-[72px]"
         checked={index == onScreenTestimonial}
       />
     )
@@ -106,10 +106,10 @@ export default function Testimonial() {
 
   return (
     <>
-      <div className="testimonial relative flex mt-2 overflow-x-scroll snap-x snap-mandatory">
+      <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
         {renderedTestimonials}
       </div>
-      <div className="flex justify-between mx-auto mt-2 max-w-[75px]">
+      <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
         {navigationButtons}
       </div>
     </>
