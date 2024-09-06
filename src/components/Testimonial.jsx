@@ -1,33 +1,33 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
+
+const data = [
+  {
+    name: "Alamaster",
+    message:
+      "I just wanted to share a quick note and let you know that you are doing  really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
+  },
+  {
+    name: "Dev Ade",
+    message:
+      "I pray you become the best version of yourself and also the biggest techie in Arewa and Naija in a whole insha Allah.",
+  },
+  {
+    name: "Techbro",
+    message:
+      "You have some cool stuff here, i’ll send your work to my other guys to see what the outcome will be. Don’t stop designing bcos u really have some good concept.",
+  },
+  { name: "Damilola", message: "This is impressive, i must commend you." },
+  {
+    name: "GDG",
+    message:
+      "Thanks to you and your team for bringing your passion and creativity to the design of #DevFest",
+  },
+];
 
 export default function Testimonial() {
 
   const testimonialRef = useRef(null)
-
-
-  const data = [
-    {
-      name: "Alamaster",
-      message:
-        "I just wanted to share a quick note and let you know that you are doing  really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
-    },
-    {
-      name: "Dev Ade",
-      message:
-        "I pray you become the best version of yourself and also the biggest techie in Arewa and Naija in a whole insha Allah.",
-    },
-    {
-      name: "Techbro",
-      message:
-        "You have some cool stuff here, i’ll send your work to my other guys to see what the outcome will be. Don’t stop designing bcos u really have some good concept.",
-    },
-    { name: "Damilola", message: "This is impressive, i must commend you." },
-    {
-      name: "GDG",
-      message:
-        "Thanks to you and your team for bringing your passion and creativity to the design of #DevFest",
-    },
-  ];
+  const [onScreenTestimonial, setOnScreenTestimonial] = useState(0)
 
   function getMap() {
     if (!testimonialRef.current) {
@@ -45,6 +45,25 @@ export default function Testimonial() {
       inline: "center",
     })
   }
+  
+
+  const observer = new IntersectionObserver(handleIntersection,
+    {
+      root: document.querySelector("#scrollArea"),
+      rootMargin: "0px",
+      threshold: 1.0,
+    }
+  )
+  function handleIntersection(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const eleIndex = entry.target.dataset.index  
+        setOnScreenTestimonial(eleIndex)
+        
+      }
+    })
+  }
+
 
   const renderedTestimonials = data.map((testimonial, index) => (
     <div
@@ -56,8 +75,11 @@ export default function Testimonial() {
         } else {
           map.delete(testimonial)
         }
+        const nodeRef = map.get(index)
+        observer.observe(nodeRef)
       }}
       className={`testimonial${index} min-w-[327px] bg-whitish p-5 mr-4 snap-center snap-always`}
+      data-index={index}
     >
       <h3 className="font-semibold text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
         From {testimonial.name}
@@ -70,13 +92,14 @@ export default function Testimonial() {
 
   const navigationButtons = data.map((person, index) => {
     return (
-      <input 
-        key={index} 
-        name="testimonials" 
+      <input
+        key={index}
+        name="testimonials"
         type="radio"
-        onClick={()=>scrollToTestimonial(index)}
-        className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out" 
-        />
+        onClick={() => scrollToTestimonial(index)}
+        className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out"
+        checked={index == onScreenTestimonial}
+      />
     )
   })
 
