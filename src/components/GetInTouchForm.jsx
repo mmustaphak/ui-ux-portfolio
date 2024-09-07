@@ -15,6 +15,7 @@ export default function GetInTouchForm() {
           type="text"
           name="name"
           placeholder="Enter your name here"
+          required
         />
       </label>
       <label className="block mt-4 font-medium text-left text-black md:mt-6 lg:mt-8 lg:text-2xl">
@@ -24,6 +25,7 @@ export default function GetInTouchForm() {
           type="email"
           name="email"
           placeholder="Enter your name here"
+          required
         />
       </label>
       <label className="block mt-4 font-medium text-left text-black md:mt-6 lg:mt-8 lg:text-2xl">
@@ -31,6 +33,7 @@ export default function GetInTouchForm() {
         <textarea
           className="w-full min-h-[119px] resize-none py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[270px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
           placeholder="Drop you message here"
+          required
         ></textarea>
       </label>
 
