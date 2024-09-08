@@ -2,7 +2,20 @@ import { Form } from "react-router-dom";
 
 export async function action({request}){
   const formData = await request.formData() 
-  console.log(formData)
+  formData.append("access_key", "a4f2764b-ca7c-42b9-92da-e2c480b03b35")
+
+  const response =  await fetch('https://api.web3forms.com/submit', {
+    method: "POST",
+    body: formData
+  })
+  
+  const data = await response.json()
+
+  if(data.success){
+    console.log("Submitted Successfully")
+  }else{
+    console.log("There was an error")
+  }
   return null
 }
 
