@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom";
+import { Form, useActionData } from "react-router-dom";
 
 export async function action({request}){
   const formData = await request.formData() 
@@ -11,17 +11,21 @@ export async function action({request}){
   
   const data = await response.json()
 
-  if(data.success){
-    console.log("Submitted Successfully")
+  if(!data.success){
+    return "Message sent successfully ✔"
   }else{
-    console.log("There was an error")
+    return "There was an Error 🗙"
   }
-  return null
 }
 
 export default function GetInTouchForm() {
+
+  const formResponse = useActionData()
+
   return (
     <Form method="post" className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]">
+
+      {formResponse && <p className="text-black text-xl font-bol">{formResponse}</p>}
       <label className="block font-medium text-left text-black md:mt-6 lg:text-2xl">
         Name <br />
         <input
