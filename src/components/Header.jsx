@@ -1,51 +1,73 @@
-import { Link, NavLink } from "react-router-dom"
-import logo from "../assets/logo.svg"
-import menu from "../assets/menu.svg"
-import close from "../assets/close-hamburger.svg"
-import { useState } from "react"
+import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo.svg";
+import menu from "../assets/menu.svg";
+import close from "../assets/close-hamburger.svg";
+import { useState } from "react";
 
 export default function Header() {
+  const [isHamburger, setIsHamburger] = useState(false);
 
-    const [isHamburger, setIsHamburger] = useState(false)
+  function handleToggle() {
+    setIsHamburger((oldIsHamburger) => !oldIsHamburger);
+  }
 
-    function handleToggle() {
-        setIsHamburger(oldIsHamburger => !oldIsHamburger)
-    }
+  return (
+    <header>
+      <nav className="px-6 py-4 flex justify-between items-center min-[500px]:pt-[2.5rem] min-[500px]:pb-10 lg:pt-[65px]">
+        <Link className="" to="/">
+          <img
+            className="min-[500px]:w-14 lg:w-[85px]"
+            src={logo}
+            alt="Mufteey Logo"
+          />
+        </Link>
 
+        <ul className="hidden justify-between self-center w-full max-w-64 min-[500px]:flex min-[550px]:max-w-[20rem] min-[550px]:text-lg md:max-w-[25rem] lg:max-w-[575px] lg:text-2xl">
+          <li>
+            <NavLink to="about">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="services">Services</NavLink>
+          </li>
+          <li>
+            <NavLink to="portfolio">Portfolio</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">Blog</NavLink>
+          </li>
+        </ul>
 
-    return (
-        <header>
-            <nav className="px-6 py-4 flex justify-between">
-                <Link to="/">
-                    <img src={logo} alt="Mufteey Logo" />
-                </Link>
+        <button className="hidden py-2 w-full max-w-[110px] ml-4 rounded-md font-medium text-white bg-black md:ml-0 min-[500px]:block min-[500px]:max-w-[105px] md:px-0 lg:max-w-[206px] lg:py-[10px] lg:px-[58px]">
+          Hire Me
+        </button>
 
-                <button onClick={handleToggle}>
-                    <img src={menu} alt="Open menu" />
-                </button>
-            </nav>
+        <button className="min-[500px]:hidden" onClick={handleToggle}>
+          <img src={menu} alt="Open menu" />
+        </button>
+      </nav>
 
-            <nav className={`${isHamburger === false && "hidden"} fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white`}>
+      <nav
+        className={`${isHamburger === false && "hidden"} fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white`}
+      >
+        <button onClick={handleToggle} className="self-start">
+          <img src={close} alt="Close " />
+        </button>
 
-                <button onClick={handleToggle} className="self-start">
-                    <img src={close} alt="Close " />
-                </button>
-
-                <ul className="mt-7">
-                    <NavLink to="about">
-                        <li className="mx-auto w-fit text-center">About</li>
-                    </NavLink>
-                    <NavLink to="services">
-                        <li className="mt-7 mx-auto w-fit text-center">Services</li>
-                    </NavLink>
-                    <NavLink to="portfolio">
-                        <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
-                    </NavLink>
-                    <NavLink to="blog">
-                        <li className="mt-7 mx-auto w-fit text-center">Blog</li>
-                    </NavLink>
-                </ul>
-            </nav>
-        </header>
-    )
+        <ul className="mt-7">
+          <NavLink to="about" onClick={handleToggle}>
+            <li className="mx-auto w-fit text-center">About</li>
+          </NavLink>
+          <NavLink to="services" onClick={handleToggle}>
+            <li className="mt-7 mx-auto w-fit text-center">Services</li>
+          </NavLink>
+          <NavLink to="portfolio" onClick={handleToggle}>
+            <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
+          </NavLink>
+          <NavLink to="blog" onClick={handleToggle}>
+            <li className="mt-7 mx-auto w-fit text-center">Blog</li>
+          </NavLink>
+        </ul>
+      </nav>
+    </header>
+  );
 }
