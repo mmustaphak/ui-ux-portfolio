@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import { action } from "./components/GetInTouchForm";
+import Splat from "./pages/Splat";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="portfolio" element={<Portfolio />} />
       <Route path="services" element={<Services />} />
+      <Route path="*" element={<Splat />}/>
     </Route>,
   ),
 );
