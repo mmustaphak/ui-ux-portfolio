@@ -11,7 +11,7 @@ export async function action({request}){
   
   const data = await response.json()
 
-  if(!data.success){
+  if(data.success){
     return "Message sent successfully ✔"
   }else{
     return "There was an Error 🗙"
