@@ -7,7 +7,7 @@ import Header from "./Header";
 import GetInTouchForm from "./GetInTouchForm";
 import logo from "../assets/footer-logo.svg";
 
-export default function Layout() {
+export default function Layout({ children }) {
   const year = new Date().getFullYear();
 
   return (
@@ -15,9 +15,13 @@ export default function Layout() {
       <div className="w-full max-w-[1220px] mx-auto">
         <Header />
 
-        <div className="pt-16 px-6 mb-6 bg-[url('src/assets/background-logo.svg')] bg-[size:min(89%,350px)] bg-[position:center_16px] min-[400px]:bg-[position:center_top] md:bg-[size:55%] md:bg-[position:center_25px] lg:pt-[239px]  bg-no-repeat  lg:bg-[size:817px_579px] lg:bg-[position:center_80px] md:mb-[35px] md:px-8 lg:mb-[50px] min-[1250px]:px-0">
-          <Outlet />
-        </div>
+        {
+          children ??
+
+          <div className="pt-16 px-6 mb-6 bg-[url('src/assets/background-logo.svg')] bg-[size:min(89%,350px)] bg-[position:center_16px] min-[400px]:bg-[position:center_top] md:bg-[size:55%] md:bg-[position:center_25px] lg:pt-[239px]  bg-no-repeat  lg:bg-[size:817px_579px] lg:bg-[position:center_80px] md:mb-[35px] md:px-8 lg:mb-[50px] min-[1250px]:px-0">
+            <Outlet />
+          </div>
+        }
 
         <div>
           <h1 className="text-black font-semibold min-[480px]:text-2xl lg:text-[2.5rem]">
