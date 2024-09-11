@@ -14,7 +14,7 @@ export async function action({request}){
   if(data.success){
     return "Message sent successfully ✔"
   }else{
-    return "There was an Error 🗙"
+    throw data
   }
 }
 
