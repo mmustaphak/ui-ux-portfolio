@@ -51,7 +51,7 @@ export default function Testimonial() {
     {
       root: document.querySelector("#scrollArea"),
       rootMargin: "0px",
-      threshold: 1.0,
+      threshold: 0.5,
     }
   )
   function handleIntersection(entries) {
