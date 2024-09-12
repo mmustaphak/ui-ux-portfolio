@@ -12,9 +12,9 @@ export async function action({request}){
   const data = await response.json()
 
   if(data.success){
-    return `${data.message} ✔`
+    return "Message sent successfully ✔"
   }else{
-    return "There was an Error 🗙"
+    throw data
   }
 }
 

@@ -13,18 +13,25 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import { action } from "./components/GetInTouchForm";
-
+import Splat from "./pages/Splat";
+import Error from "./components/Error"
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route 
-      path="/" 
+    <Route
+      path="/"
       action={action}
       element={<Layout />}
+      errorElement={
+        <Layout>
+          <Error />
+        </Layout>
+      }
     >
       <Route index element={<Index />} />
       <Route path="about" element={<About />} />
       <Route path="portfolio" element={<Portfolio />} />
       <Route path="services" element={<Services />} />
+      <Route path="*" element={<Splat />} />
     </Route>,
   ),
 );
