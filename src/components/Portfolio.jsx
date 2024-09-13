@@ -1,4 +1,5 @@
 import projectImg from "../assets/portfolio-project.png";
+import Paragraph from "./Paragraph";
 
 export default function Portfolio() {
   return (
@@ -6,9 +7,9 @@ export default function Portfolio() {
       <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
         My Portfolio Projects
       </h1>
-      <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
+      <Paragraph>
         Explore the artistry and precision in my portfolio projects
-      </p>
+      </Paragraph>
       {/* Project Cards */}
       <a href="">
         <div className="mt-4 mx-auto lg:w-[90%]">

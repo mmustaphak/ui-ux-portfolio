@@ -1,4 +1,5 @@
 import { Form, useActionData } from "react-router-dom";
+import Paragraph from "./Paragraph";
 
 export async function action({request}){
   const formData = await request.formData() 
@@ -25,7 +26,7 @@ export default function GetInTouchForm() {
   return (
     <Form method="post" className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]">
 
-      {formResponse && <p className="text-black text-xl font-bol">{formResponse}</p>}
+      {formResponse && <Paragraph ClassName="mb-2 text-black text-xl font-semibold">{formResponse}</Paragraph>}
       <label className="block font-medium text-left text-black md:mt-6 lg:text-2xl">
         Name <br />
         <input

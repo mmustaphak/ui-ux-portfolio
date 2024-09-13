@@ -1,4 +1,5 @@
 import figma from "../assets/figma.svg";
+import Paragraph from "./Paragraph";
 
 const servicesDataArr = [
   {
@@ -32,9 +33,9 @@ const renderedServices = servicesDataArr.map((service) => (
     <h2 className="font-medium text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
       {service.title}
     </h2>
-    <p className="text-[0.738rem] mt-2 lg:mt-4 lg:text-[1.25rem]">
+    <Paragraph ClassName="text-[0.738rem] !lg:mt-4 !lg:text-[1.25rem]">
       {service.description}
-    </p>
+    </Paragraph>
   </div>
 ));
 
@@ -44,10 +45,11 @@ export default function Services() {
       <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
         My Services
       </h1>
-      <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
+      <Paragraph>
         Transforming visions into captivating realities where design meets
         innovation for an exceptional UI/UX journey.
-      </p>
+      </Paragraph>
+      
       <div className="grid mx-auto mt-2  justify-center md:grid-cols-2 md:gap-5 md:max-w-[700px] lg:max-w-none lg:gap-10 lg:mt-8">
         {renderedServices}
       </div>
