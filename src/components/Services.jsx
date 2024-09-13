@@ -26,13 +26,13 @@ const servicesDataArr = [
 const renderedServices = servicesDataArr.map((service) => (
   <div
     key={service.title}
-    className="mt-2 py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]"
+    className="mt-2 py-8 px-4 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]"
   >
     <img className="mx-auto lg:size-[109px]" src={figma} alt=" " />
     <h2 className="font-medium text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
       {service.title}
     </h2>
-    <p className="text-[13.3px] mt-2 lg:mt-4 lg:text-[1.25rem]">
+    <p className="text-[0.738rem] mt-2 lg:mt-4 lg:text-[1.25rem]">
       {service.description}
     </p>
   </div>
