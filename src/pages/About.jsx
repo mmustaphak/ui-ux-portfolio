@@ -1,5 +1,6 @@
 import Resume from "../components/Resume";
 import mufteey from "../assets/Mufteey.svg";
+import Paragraph from "../components/Paragraph";
 
 export default function About() {
   return (
@@ -13,13 +14,13 @@ export default function About() {
         alt="Mustapha Danladi"
       />
       
-      <p className="mt-6 mx-auto text-[0.75rem] max-w-[512px] md:text-xl md:max-w-[760px] md:leading-[normal] lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
+      <Paragraph ClassName="mt-6 lg:mt-8">
         Hey there! I&apos;m Mufteey, a UI/UX designer driven by a passion for
         creating seamless and visually stunning digital experiences. With a keen
         eye for detail and a love for problem-solving, I specialize in
         translating ideas into user-friendly designs. Let&apos;s craft something
         exceptional together!
-      </p>
+      </Paragraph>
       <Resume />
     </section>
   );
