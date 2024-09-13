@@ -85,7 +85,7 @@ export default function Testimonial() {
       <h3 className="text-[13.3px] text-black font-semibold md:text-2xl lg:text-[2.5rem]">
         From {testimonial.name}
       </h3>
-      <Paragraph ClassName="mt-2 !text-[.6875rem] !max-w-[412px] !md:max-w-[700px] !md:text-xl !md:leading-[normal] !md:mt-4 !lg:mt-6 !lg:max-w-full !lg:text-[2rem]">
+      <Paragraph ClassName="mt-2 !text-[.6875rem] !max-w-[412px] md:!max-w-[700px] md:!text-xl md:!leading-[normal] md:!mt-4 lg:!mt-6 lg:!max-w-full lg:text-[2rem]">
         {testimonial.message}
       </Paragraph>
     </div>
