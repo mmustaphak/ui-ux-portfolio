@@ -33,7 +33,7 @@ const renderedServices = servicesDataArr.map((service) => (
     <h2 className="font-medium text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
       {service.title}
     </h2>
-    <Paragraph ClassName="text-[0.738rem] !lg:mt-4 !lg:text-[1.25rem]">
+    <Paragraph ClassName="!text-[0.738rem] lg:!mt-4 lg:!text-[1.25rem]">
       {service.description}
     </Paragraph>
   </div>
