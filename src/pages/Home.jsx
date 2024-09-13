@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 flex flex-col justify-center mx-auto items-center min-h-[135px] w-full rounded-lg bg-black bg-[url('src/assets/corner-logo-top.svg'),_url('src/assets/corner-logo-bottom.svg')] bg-[position:top_right,_bottom_left] bg-no-repeat md:py-[70px] md:bg-[position:104%_0%,-4%_100%] md:bg-[size:19%_32%] lg:py-[136px] lg:bg-[position:104%_0%,-4%_100%] min-[1488px]:bg-[size:234px_166px] min-[1488px]:bg-[position:101%_0%,-1%_100%]">
-        <Paragraph ClassName="!mt-0 !text-[0.75rem] text-white  !font-medium !md:text-2xl !lg:text-[2.5rem]">Redesign your Existing website with me.</Paragraph>
+        <Paragraph ClassName="!mt-0 !text-[0.75rem] text-white  !font-medium md:!text-2xl lg:!text-[2.5rem]">Redesign your Existing website with me.</Paragraph>
         <button className="mt-2 py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] rounded-button font-medium text-[10.11px] text-black bg-white md:text-lg md:px-0 md:mt-4 lg:text-[1.5rem] lg:mt-8 lg:py-[10px] md:py-1 md:max-w-[280px] lg:max-w-[409px]">
           Get In Touch
         </button>
