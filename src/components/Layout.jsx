@@ -15,7 +15,6 @@ export default function Layout({ children }) {
 
   const theme = useContext(ThemeContext)
 
-
   return (
     <ThemeContext.Provider>
       <div className="flex flex-col text-center text-grey">
@@ -39,7 +38,7 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <footer className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] bg-black min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]">
+        <footer className={`mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] ${theme.background} min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]`}>
           <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
             <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
               <img
