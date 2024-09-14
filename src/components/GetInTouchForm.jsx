@@ -1,31 +1,34 @@
 import { Form, useActionData } from "react-router-dom";
 
-export async function action({request}){
-  const formData = await request.formData() 
-  formData.append("access_key", "a4f2764b-ca7c-42b9-92da-e2c480b03b35")
+export async function action({ request }) {
+  const formData = await request.formData();
+  formData.append("access_key", "a4f2764b-ca7c-42b9-92da-e2c480b03b35");
 
-  const response =  await fetch('https://api.web3forms.com/submit', {
+  const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
-    body: formData
-  })
-  
-  const data = await response.json()
+    body: formData,
+  });
 
-  if(data.success){
-    return "Message sent successfully ✔"
-  }else{
-    throw data
+  const data = await response.json();
+
+  if (data.success) {
+    return "Message sent successfully ✔";
+  } else {
+    throw data;
   }
 }
 
 export default function GetInTouchForm() {
-  
-  const formResponse = useActionData()
+  const formResponse = useActionData();
 
   return (
-    <Form method="post" className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]">
-
-      {formResponse && <p className="text-black text-xl font-bol">{formResponse}</p>}
+    <Form
+      method="post"
+      className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]"
+    >
+      {formResponse && (
+        <p className="text-black text-xl font-bol">{formResponse}</p>
+      )}
       <label className="block font-medium text-left text-black md:mt-6 lg:text-2xl">
         Name <br />
         <input

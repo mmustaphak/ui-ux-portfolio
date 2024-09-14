@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useRef, useState } from "react";
 
 const data = [
   {
@@ -25,58 +25,52 @@ const data = [
 ];
 
 export default function Testimonial() {
-
-  const testimonialRef = useRef(null)
-  const [onScreenTestimonial, setOnScreenTestimonial] = useState(0)
+  const testimonialRef = useRef(null);
+  const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
 
   function getMap() {
     if (!testimonialRef.current) {
-      testimonialRef.current = new Map()
+      testimonialRef.current = new Map();
     }
-    return testimonialRef.current
+    return testimonialRef.current;
   }
 
   function scrollToTestimonial(testimonial) {
     const map = getMap();
-    const node = map.get(testimonial)
+    const node = map.get(testimonial);
     node.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
-    })
+    });
   }
-  
 
-  const observer = new IntersectionObserver(handleIntersection,
-    {
-      root: document.querySelector("#scrollArea"),
-      rootMargin: "0px",
-      threshold: 1.0,
-    }
-  )
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: document.querySelector("#scrollArea"),
+    rootMargin: "0px",
+    threshold: 1.0,
+  });
   function handleIntersection(entries) {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const eleIndex = entry.target.dataset.index  
-        setOnScreenTestimonial(eleIndex)
-        
+        const eleIndex = entry.target.dataset.index;
+        setOnScreenTestimonial(eleIndex);
       }
-    })
+    });
   }
-
 
   const renderedTestimonials = data.map((testimonial, index) => (
     <div
       key={testimonial.name}
-      ref={node => {
+      ref={(node) => {
         const map = getMap();
         if (node) {
           map.set(index, node);
         } else {
-          map.delete(testimonial)
+          map.delete(testimonial);
         }
-        const nodeRef = map.get(index)
-        observer.observe(nodeRef)
+        const nodeRef = map.get(index);
+        observer.observe(nodeRef);
       }}
       className={`testimonial${index} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
       data-index={index}
@@ -100,9 +94,8 @@ export default function Testimonial() {
         className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out md:size-3 md:hover:min-w-[30px] md:checked:min-w-[44px] lg:size-4 lg:hover:min-w-[55px] lg:checked:min-w-[72px]"
         checked={index == onScreenTestimonial}
       />
-    )
-  })
-
+    );
+  });
 
   return (
     <>

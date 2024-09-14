@@ -12,7 +12,7 @@ export default function About() {
         src={mufteey}
         alt="Mustapha Danladi"
       />
-      
+
       <p className="mt-6 mx-auto text-[0.75rem] max-w-[512px] md:text-xl md:max-w-[760px] md:leading-[normal] lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
         Hey there! I&apos;m Mufteey, a UI/UX designer driven by a passion for
         creating seamless and visually stunning digital experiences. With a keen

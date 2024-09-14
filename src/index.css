@@ -14,10 +14,10 @@
   }
 }
 
-.testimonial::-webkit-scrollbar{
+.testimonial::-webkit-scrollbar {
   display: none;
 }
-.testimonial{
-  -ms-overflow-style:none;
+.testimonial {
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }

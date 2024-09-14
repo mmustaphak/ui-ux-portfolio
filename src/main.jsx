@@ -14,7 +14,7 @@ import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import { action } from "./components/GetInTouchForm";
 import Splat from "./pages/Splat";
-import Error from "./components/Error"
+import Error from "./components/Error";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
