@@ -6,17 +6,17 @@ import { PiLinkedinLogoFill } from "react-icons/pi";
 import Header from "./Header";
 import GetInTouchForm from "./GetInTouchForm";
 import logo from "../assets/footer-logo.svg";
-import { createContext, useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
+import { useContext } from "react";
 
-const ThemeContext = createContext({ background: 'bg-[#151515]', text: 'text-[#151515]' })
 
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
 
-  const theme = useContext(ThemeContext)
+  const theme = { background: 'bg-[#151515]', text: 'text-[#151515]' }
 
   return (
-    <ThemeContext.Provider>
+    <ThemeContext.Provider value={theme}>
       <div className="flex flex-col text-center text-grey">
         <div className="w-full max-w-[1220px] mx-auto">
           <Header />
