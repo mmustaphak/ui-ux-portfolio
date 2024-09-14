@@ -6,6 +6,9 @@ import { PiLinkedinLogoFill } from "react-icons/pi";
 import Header from "./Header";
 import GetInTouchForm from "./GetInTouchForm";
 import logo from "../assets/footer-logo.svg";
+import { createContext } from "react";
+
+const ThemeContext = createContext({background: 'bg-[#151515]', text: 'text-[#151515]'})
 
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
