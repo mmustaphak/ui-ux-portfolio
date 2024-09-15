@@ -27,14 +27,12 @@ const servicesDataArr = [
 
 function ServiceCard({ title, description }) {
 
-  const { color } = useContext(ThemeContext)
+  const { color, text } = useContext(ThemeContext)
 
-  console.log(color)
   return (
     <div
       className="mt-2 py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]"
     >
-      {/* <img className="" src={Figma} alt=" " /> */}
       <svg
         className="mx-auto lg:size-[109px]"
         width="68"
@@ -83,7 +81,7 @@ function ServiceCard({ title, description }) {
         </defs>
       </svg>
 
-      <h2 className="font-medium text-[13.3px] text-black mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]">
+      <h2 className={`${text} font-medium text-[13.3px] mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]`}>
         {title}
       </h2>
       <p className="text-[13.3px] mt-2 lg:mt-4 lg:text-[1.25rem]">
@@ -97,9 +95,11 @@ function ServiceCard({ title, description }) {
 const renderedServices = servicesDataArr.map((service) => <ServiceCard key={service.title} {...service} />);
 
 export default function Services() {
+
+  const { text } = useContext(ThemeContext)
   return (
     <>
-      <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
+      <h1 className={`${text} font-semibold md:text-2xl lg:text-[2.5rem]`}>
         My Services
       </h1>
       <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
