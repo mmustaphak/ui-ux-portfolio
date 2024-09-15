@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import figma from "../assets/figma.svg";
+import { ThemeContext } from "./ThemeContext";
 
 const servicesDataArr = [
   {
@@ -24,6 +26,10 @@ const servicesDataArr = [
 ];
 
 function ServiceCard({ title, description }) {
+
+  const { color } = useContext(ThemeContext)
+
+  console.log(color)
   return (
     <div
       className="mt-2 py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]"
@@ -48,7 +54,7 @@ function ServiceCard({ title, description }) {
           cx="34.2231"
           cy="33.2992"
           r="26.5072"
-          fill="#151515"
+          fill={color}
           id="circle2" />
         <path
           fillRule="evenodd"
