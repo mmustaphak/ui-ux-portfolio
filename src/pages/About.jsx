@@ -1,7 +1,12 @@
 import Resume from "../components/Resume";
 import mufteey from "../assets/Mufteey.svg";
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext";
 
 export default function About() {
+
+  const {color, text} = useContext(ThemeContext)
+
   return (
     <section className="mt-6 min-[400px]:mt-0 lg:-mt-6">
       <h1 className="text-black font-semibold md:text-2xl lg:text-[2.5rem]">
