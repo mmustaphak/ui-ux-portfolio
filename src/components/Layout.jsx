@@ -7,13 +7,12 @@ import Header from "./Header";
 import GetInTouchForm from "./GetInTouchForm";
 import logo from "../assets/footer-logo.svg";
 import { ThemeContext } from "./ThemeContext";
-import { useContext } from "react";
 
 
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
 
-  const theme = { background: 'bg-[#151515]', text: 'text-[#151515]' }
+  const theme = { background: 'bg-[#00A070]', text: 'text-[#00A070]', color: '#00A070' }
 
   return (
     <ThemeContext.Provider value={theme}>
@@ -28,7 +27,7 @@ export default function Layout({ children }) {
           )}
 
           <div>
-            <h1 className="mt-auto text-black font-semibold min-[480px]:text-2xl lg:text-[2.5rem]">
+            <h1 className={`${theme.text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}>
               Get In Touch
             </h1>
             <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">

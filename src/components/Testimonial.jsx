@@ -1,4 +1,5 @@
-import { useRef, useState } from "react"
+import { useContext, useRef, useState } from "react"
+import { ThemeContext } from "./ThemeContext";
 
 const data = [
   {
@@ -64,7 +65,10 @@ export default function Testimonial() {
     })
   }
 
-  function Testimonial({index, name, message}) {
+  function Testimonial({ index, name, message }) {
+
+    const { text } = useContext(ThemeContext)
+
     return (
       <div
         ref={node => {
@@ -78,7 +82,7 @@ export default function Testimonial() {
         className={`testimonial${index} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
         data-index={index}
       >
-        <h3 className="text-[13.3px] text-black font-semibold md:text-2xl lg:text-[2.5rem]">
+        <h3 className={`${text} text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]`}>
           From {name}
         </h3>
         <p className="mt-2 text-[.6875rem] mx-auto max-w-[412px] md:max-w-[700px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-6 lg:max-w-full lg:text-[2rem]">
@@ -88,20 +92,27 @@ export default function Testimonial() {
     )
   }
 
-  const renderedTestimonials = data.map((testimonial, index) => <Testimonial key={testimonial.name} {...{...testimonial, index}}/>)
+  function NavButton({ index }) {
 
-  const navigationButtons = data.map((person, index) => {
+    const { color } = useContext(ThemeContext)
+
     return (
-      <input
-        key={index}
-        name="testimonials"
-        type="radio"
-        onClick={() => scrollToTestimonial(index)}
-        className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:bg-black checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out md:size-3 md:hover:min-w-[30px] md:checked:min-w-[44px] lg:size-4 lg:hover:min-w-[55px] lg:checked:min-w-[72px]"
-        checked={index == onScreenTestimonial}
-      />
+      <>
+        <style>{`:checked{background: ${color}}`}</style>
+        <input
+          name="testimonials"
+          type="radio"
+          onClick={() => scrollToTestimonial(index)}
+          className="size-2 bg-[#D9D9D9] rounded-full appearance-none hover:min-w-[15px] hover:checked:min-w-[23px] checked:min-w-[23px] checked:transition checked:duration-200 checked:ease-in-out md:size-3 md:hover:min-w-[30px] md:checked:min-w-[44px] lg:size-4 lg:hover:min-w-[55px] lg:checked:min-w-[72px]"
+          checked={index == onScreenTestimonial}
+        />
+      </>
     )
-  })
+  }
+
+  const renderedTestimonials = data.map((testimonial, index) => <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />)
+
+  const navigationButtons = data.map((person, index) => <NavButton key={index} index={index} />)
 
   console.log(getMap())
 
