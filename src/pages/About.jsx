@@ -1,5 +1,5 @@
 import Resume from "../components/Resume";
-import mufteey from "../assets/Mufteey.svg";
+import mufteey from "../assets/black-mufteey.svg";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 
