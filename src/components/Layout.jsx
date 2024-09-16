@@ -8,11 +8,14 @@ import GetInTouchForm from "./GetInTouchForm";
 import logo from "../assets/footer-logo.svg";
 import { ThemeContext } from "./ThemeContext";
 
-
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
 
-  const theme = { background: 'bg-[#00A070]', text: 'text-[#00A070]', color: '#00A070' }
+  const theme = {
+    background: "bg-[#00A070]",
+    text: "text-[#00A070]",
+    color: "#00A070",
+  };
 
   return (
     <ThemeContext.Provider value={theme}>
@@ -27,7 +30,9 @@ export default function Layout({ children }) {
           )}
 
           <div>
-            <h1 className={`${theme.text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}>
+            <h1
+              className={`${theme.text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}
+            >
               Get In Touch
             </h1>
             <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
@@ -37,7 +42,9 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <footer className={`mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] ${theme.background} min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]`}>
+        <footer
+          className={`mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] ${theme.background} min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]`}
+        >
           <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
             <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
               <img

@@ -23,7 +23,7 @@ export async function action({ request }) {
 export default function GetInTouchForm() {
   const formResponse = useActionData();
 
-  const { background, text } = useContext(ThemeContext)
+  const { background, text } = useContext(ThemeContext);
 
   return (
     <Form
@@ -33,7 +33,9 @@ export default function GetInTouchForm() {
       {formResponse && (
         <p className={`text-xl font-bold ${text}`}>{formResponse}</p>
       )}
-      <label className={`${text} block font-medium text-left md:mt-6 lg:text-2xl`}>
+      <label
+        className={`${text} block font-medium text-left md:mt-6 lg:text-2xl`}
+      >
         Name <br />
         <input
           className="text-black w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
@@ -43,7 +45,9 @@ export default function GetInTouchForm() {
           required
         />
       </label>
-      <label className={`${text} block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl`}>
+      <label
+        className={`${text} block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl`}
+      >
         Email Address <br />
         <input
           className="text-black w-full py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[52px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
@@ -53,7 +57,9 @@ export default function GetInTouchForm() {
           required
         />
       </label>
-      <label className={`${text} block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl`}>
+      <label
+        className={`${text} block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl`}
+      >
         Message <br />
         <textarea
           className="text-black w-full min-h-[119px] resize-none py-2 px-4 rounded-[4.29px] font-normal bg-whitish focus:outline-none focus:border focus:border-black placeholder:font-normal md:rounded-lg md:min-h-[270px] lg:mt-4 lg:py-[27px] lg:px-10 lg:focus:border-3 lg:rounded-2xl"
