@@ -7,7 +7,8 @@ import { ThemeContext } from "./ThemeContext";
 
 export default function Header() {
 
-  const {color} = useContext(ThemeContext)
+  const {color, background} = useContext(ThemeContext)
+
 
   const [isHamburger, setIsHamburger] = useState(false);
 
@@ -44,7 +45,7 @@ export default function Header() {
           </li>
         </ul>
 
-        <button className="hidden py-2 w-full max-w-[110px] ml-4 rounded-md font-medium text-white bg-black md:ml-0 min-[500px]:block min-[500px]:max-w-[105px] md:px-0 lg:max-w-[206px] lg:py-[10px] lg:px-[58px]">
+        <button className={`${background} hidden py-2 w-full max-w-[110px] ml-4 rounded-md font-medium text-white md:ml-0 min-[500px]:block min-[500px]:max-w-[105px] md:px-0 lg:max-w-[206px] lg:py-[10px] lg:px-[58px]`}>
           Hire Me
         </button>
 
