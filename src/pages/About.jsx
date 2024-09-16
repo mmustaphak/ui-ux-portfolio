@@ -1,5 +1,7 @@
 import Resume from "../components/Resume";
-import mufteey from "../assets/black-mufteey.svg";
+import blackMufteey from "../assets/black-mufteey.svg";
+import greenMufteey from "../assets/green-mufteey.svg";
+import blueMufteey from "../assets/blue-mufteey.svg";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 
@@ -7,14 +9,26 @@ export default function About() {
 
   const {color, text} = useContext(ThemeContext)
 
+  function imageTheme(hexCode){
+    switch(hexCode){
+      case '#151515':
+        return blackMufteey
+      case '#00A070':
+        return greenMufteey
+      case '#000958':
+        return blueMufteey
+    }
+  }
+
   return (
     <section className="mt-6 min-[400px]:mt-0 lg:-mt-6">
       <h1 className={`${text} font-semibold md:text-2xl lg:text-[2.5rem]`}>
         About Me
       </h1>
+
       <img
         className="mx-auto mt-4 w-[29.4%] max-w-[160px] md:mt-6 lg:min-w-[329px] lg:mt-8"
-        src={mufteey}
+        src={imageTheme(color)}
         alt="Mustapha Danladi"
       />
 
