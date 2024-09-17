@@ -11,14 +11,36 @@ import { ThemeContext } from "./ThemeContext";
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
 
-  const theme = {
-    background: "bg-[#00A070]",
-    text: "text-[#00A070]",
-    color: "#00A070",
-  };
+  function randomTheme() {
+    const themes = [
+      {
+        // black Theme
+        background: "bg-[#151515]",
+        text: "text-[#151515]",
+        color: "#151515",
+      },
+      {
+        // green Theme
+        background: "bg-[#00A070]",
+        text: "text-[#00A070]",
+        color: "#00A070",
+      },
+      {
+        // blue Theme
+        background: "bg-[#000958]",
+        text: "text-[#000958]",
+        color: "#000958",
+      },
+    ]
+
+    const randomIndex = Math.floor(Math.random()*3)
+    return themes[randomIndex]
+  }
+
+  const currentTheme = randomTheme()
 
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={currentTheme}>
       <div className="flex flex-col text-center text-grey">
         <div className="w-full max-w-[1220px] mx-auto">
           <Header />
@@ -31,7 +53,7 @@ export default function Layout({ children }) {
 
           <div>
             <h1
-              className={`${theme.text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}
+              className={`${randomTheme().text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}
             >
               Get In Touch
             </h1>
@@ -43,7 +65,7 @@ export default function Layout({ children }) {
         </div>
 
         <footer
-          className={`mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] ${theme.background} min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]`}
+          className={`mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] ${currentTheme.background} min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]`}
         >
           <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
             <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
