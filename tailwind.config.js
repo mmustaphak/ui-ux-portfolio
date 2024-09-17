@@ -16,6 +16,12 @@ export default {
       },
       fontSize:{
         text: '10.11px',
+      },
+      backgroundImage:{
+        'layout':"url('/src/assets/background-logo.svg')",
+        'top-logo': "url('/src/assets/corner-logo-top.svg')",
+        'bottom-logo': "url('/src/assets/corner-logo-bottom.svg')",
+        'drop-down':"url('/src/assets/menu-down.svg')"
       }
     },
   },
