@@ -19,7 +19,7 @@ export default function Header() {
       <nav className="px-6 py-4 flex justify-between items-center min-[500px]:pt-[2.5rem] min-[500px]:pb-10 lg:pt-[65px]">
         <Link to="/">
           <svg
-            className="min-[500px]:w-14 lg:w-[85px]"
+            className="min-w-[39px] min-h-[27px] min-[500px]:w-14 lg:w-[85px]"
             viewBox="0 0 39 27"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
