@@ -53,7 +53,7 @@ export default function Layout({ children }) {
 
           <div>
             <h1
-              className={`${randomTheme().text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}
+              className={`${currentTheme.text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}
             >
               Get In Touch
             </h1>
