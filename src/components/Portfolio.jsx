@@ -3,10 +3,10 @@ import projectImg from "../assets/portfolio-project.png";
 import { ThemeContext } from "./ThemeContext";
 
 export default function Portfolio() {
-  const { text } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   return (
     <>
-      <h1 className={`${text} font-semibold md:text-2xl lg:text-[2.5rem]`}>
+      <h1 style={{ color: theme }} className="font-semibold md:text-2xl lg:text-[2.5rem]">
         My Portfolio Projects
       </h1>
       <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
@@ -23,7 +23,8 @@ export default function Portfolio() {
             />
           </div>
           <h2
-            className={`${text} mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]`}
+            style={{ color: theme }}
+            className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
           >
             The Bee Charge Design
           </h2>
