@@ -27,7 +27,8 @@ export default function Layout({ children }) {
 
         <div>
           <h1
-            className={`${theme.text} mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]`}
+            style={{color:theme}}
+            className="mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]"
           >
             Get In Touch
           </h1>
@@ -39,7 +40,8 @@ export default function Layout({ children }) {
       </div>
 
       <footer
-        className={`${theme.background} mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]`}
+        style={{background:theme}}
+        className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]"
       >
         <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
           <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
