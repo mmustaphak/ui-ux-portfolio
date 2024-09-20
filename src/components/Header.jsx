@@ -6,13 +6,14 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 export default function Header() {
-  const { color, background } = useContext(ThemeContext);
 
   const [isHamburger, setIsHamburger] = useState(false);
 
   function handleToggle() {
     setIsHamburger((oldIsHamburger) => !oldIsHamburger);
   }
+
+  const theme = useContext(ThemeContext)
 
   return (
     <header>
@@ -30,11 +31,11 @@ export default function Header() {
             />
             <path
               d="M9.45672 27H7.42896C6.7576 27 6.33748 26.2738 6.67214 25.6918L15.1311 10.9805C15.4656 10.3989 16.3039 10.3962 16.642 10.9758L17.6496 12.7031C17.8069 12.9728 17.8082 13.306 17.653 13.5769L10.2142 26.5609C10.0587 26.8325 9.76966 27 9.45672 27Z"
-              fill={color}
+              fill={theme}
             />
             <path
               d="M37.4193 19.6257L36.4881 21.3449C36.3355 21.6266 36.0408 21.8021 35.7204 21.8021H16.1928C15.5313 21.8021 15.1101 21.095 15.4252 20.5133L16.3564 18.7941C16.509 18.5124 16.8036 18.3369 17.124 18.3369H36.6517C37.3132 18.3369 37.7344 19.044 37.4193 19.6257Z"
-              fill={color}
+              fill={theme}
             />
             <path
               d="M3.68824 27H1.51644C0.843426 27 0.423513 26.2706 0.761456 25.6886L12.2372 5.92474C12.5743 5.34427 13.413 5.34544 13.7484 5.92684L14.9061 7.93344C15.0633 8.2059 15.0617 8.54185 14.9021 8.81286L4.44042 26.5701C4.28349 26.8365 3.99739 27 3.68824 27Z"
@@ -46,7 +47,7 @@ export default function Header() {
             />
             <path
               d="M15.8059 0H13.357C12.6838 0 12.2639 0.729695 12.6022 1.31171L21.4056 16.4587C21.5619 16.7276 21.8494 16.8931 22.1604 16.8931H24.3504C25.0186 16.8931 25.439 16.1731 25.1108 15.5911L16.5663 0.444088C16.4115 0.169713 16.1209 0 15.8059 0Z"
-              fill={color}
+              fill={theme}
             />
           </svg>
         </Link>
@@ -67,7 +68,8 @@ export default function Header() {
         </ul>
 
         <button
-          className={`${background} hidden py-2 w-full max-w-[110px] ml-4 rounded-md font-medium text-white md:ml-0 min-[500px]:block min-[500px]:max-w-[105px] md:px-0 lg:max-w-[206px] lg:py-[10px] lg:px-[58px]`}
+          style={{background:theme}}
+          className="hidden py-2 w-full max-w-[110px] ml-4 rounded-md font-medium text-white md:ml-0 min-[500px]:block min-[500px]:max-w-[105px] md:px-0 lg:max-w-[206px] lg:py-[10px] lg:px-[58px]"
         >
           Hire Me
         </button>
