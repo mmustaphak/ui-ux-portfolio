@@ -113,8 +113,6 @@ export default function Testimonial() {
     <NavButton key={index} index={index} />
   ));
 
-  console.log(getMap());
-
   return (
     <>
       <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
