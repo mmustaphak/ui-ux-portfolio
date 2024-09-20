@@ -85,7 +85,7 @@ export default function Services() {
 
         <h2
           style={{ color: theme }}
-          className="$font-medium text-[13.3px] mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]"
+          className="font-medium text-[13.3px] mt-[18px] md:text-lg lg:mt-8 lg:text-[1.5rem]"
         >
           {title}
         </h2>
