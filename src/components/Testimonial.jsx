@@ -26,8 +26,11 @@ const data = [
 ];
 
 export default function Testimonial() {
+
   const testimonialRef = useRef(null);
   const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
+  const theme = useContext(ThemeContext);
+
 
   function getMap() {
     if (!testimonialRef.current) {
@@ -61,8 +64,6 @@ export default function Testimonial() {
   }
 
   function Testimonial({ index, name, message }) {
-    const { text } = useContext(ThemeContext);
-
     return (
       <div
         ref={(node) => {
@@ -77,7 +78,8 @@ export default function Testimonial() {
         data-index={index}
       >
         <h3
-          className={`${text} text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]`}
+          style={{color: theme}}
+          className="text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]"
         >
           From {name}
         </h3>
@@ -89,11 +91,10 @@ export default function Testimonial() {
   }
 
   function NavButton({ index }) {
-    const { color } = useContext(ThemeContext);
 
     return (
       <>
-        <style>{`:checked{background: ${color}}`}</style>
+        <style>{`:checked{background: ${theme}}`}</style>
         <input
           name="testimonials"
           type="radio"
