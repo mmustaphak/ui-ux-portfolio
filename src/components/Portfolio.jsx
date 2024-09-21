@@ -14,14 +14,15 @@ export default function Portfolio() {
       </p>
       {/* Project Cards */}
       <a href="">
-        <div className="mt-4 mx-auto lg:w-[90%]">
-          <div className="p-7 rounded-lg bg-whitish md:bg-transparent">
+        <div className="mt-4 w-fit">
+          <div className="p-7 rounded-lg bg-whitish">
             <img
               className="mx-auto md:mx-0 md:mr-auto"
               src={projectImg}
               alt="The Bee Charge Design Project"
             />
           </div>
+
           <h2
             style={{ color: theme }}
             className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
