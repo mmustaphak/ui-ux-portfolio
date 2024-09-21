@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import projectImg from "../assets/portfolio-project.png";
+import projectImg2 from "../assets/portfolio-project2.png";
+import projectImg3 from "../assets/portfolio-project3.png";
+import projectImg4 from "../assets/portfolio-project4.png";
 import { ThemeContext } from "./ThemeContext";
 
 export default function Portfolio() {
