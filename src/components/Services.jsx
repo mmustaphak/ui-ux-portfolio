@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import figma from "../assets/figma.svg";
 import { ThemeContext } from "./ThemeContext";
 
 const servicesDataArr = [
