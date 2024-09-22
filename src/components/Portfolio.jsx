@@ -15,13 +15,13 @@ export default function Portfolio() {
       <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
         Explore the artistry and precision in my portfolio projects
       </p>
-      {/* Project Cards */}
-      <div className="grid grid-cols-1 justify-items-center gap-4 mt-4">
-        <a className="w-fit" href="">
-          <div className="w-fit">
+
+      <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto"
+                className="mx-auto w-full"
                 src={projectImg}
                 alt="The Bee Charge Design Project"
               />
@@ -34,11 +34,11 @@ export default function Portfolio() {
             </h2>
           </div>
         </a>
-        <a className="w-fit" href="">
-          <div className="w-fit">
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto"
+                className="mx-auto w-full"
                 src={projectImg2}
                 alt="The Bee Charge Design Project"
               />
@@ -53,11 +53,11 @@ export default function Portfolio() {
           </div>
         </a>
 
-        <a className="w-fit" href="">
-          <div className="w-fit">
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto"
+                className="mx-auto w-full"
                 src={projectImg3}
                 alt="The Bee Charge Design Project"
               />
@@ -72,11 +72,11 @@ export default function Portfolio() {
           </div>
         </a>
 
-        <a className="w-fit" href="">
-          <div className="w-fit">
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto"
+                className="mx-auto w-full"
                 src={projectImg4}
                 alt="The Bee Charge Design Project"
               />
