@@ -1,5 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
+import { client } from "../sanity";
 
 const data = [
   {
@@ -105,6 +106,12 @@ export default function Testimonial() {
       </>
     );
   }
+
+  async function queriedTestimonials(){
+    return await client.fetch("*[_type == 'testimonial']{name, message}")
+  }
+
+  queriedTestimonials().then(data => console.log(data)).catch(err => console.log(err))
 
   const renderedTestimonials = data.map((testimonial, index) => (
     <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
