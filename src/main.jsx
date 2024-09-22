@@ -9,6 +9,7 @@ import {
 import "./index.css";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import { loader as homeLoader } from "./components/Testimonial.jsx";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -29,7 +30,11 @@ const router = createBrowserRouter(
         </Layout>
       }
     >
-      <Route index element={<Home />} />
+      <Route
+        index
+        element={<Home />}
+        loader={homeLoader}
+      />
       <Route path="about" element={<About />} />
       <Route path="portfolio" element={<Portfolio />} />
       <Route path="services" element={<Services />} />
