@@ -16,12 +16,12 @@ export default function Portfolio() {
         Explore the artistry and precision in my portfolio projects
       </p>
       {/* Project Cards */}
-      <div>
-        <a href="">
-          <div className="mt-4 w-fit">
+      <div className="grid grid-cols-1 justify-items-center gap-4 mt-4">
+        <a className="w-fit" href="">
+          <div className="w-fit">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto md:mx-0 md:mr-auto"
+                className="mx-auto"
                 src={projectImg}
                 alt="The Bee Charge Design Project"
               />
@@ -34,11 +34,11 @@ export default function Portfolio() {
             </h2>
           </div>
         </a>
-        <a href="">
-          <div className="mt-4 w-fit">
+        <a className="w-fit" href="">
+          <div className="w-fit">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto md:mx-0 md:mr-auto"
+                className="mx-auto"
                 src={projectImg2}
                 alt="The Bee Charge Design Project"
               />
@@ -53,11 +53,11 @@ export default function Portfolio() {
           </div>
         </a>
 
-        <a href="">
-          <div className="mt-4 w-fit">
+        <a className="w-fit" href="">
+          <div className="w-fit">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto md:mx-0 md:mr-auto"
+                className="mx-auto"
                 src={projectImg3}
                 alt="The Bee Charge Design Project"
               />
@@ -72,11 +72,11 @@ export default function Portfolio() {
           </div>
         </a>
 
-        <a href="">
-          <div className="mt-4 w-fit">
+        <a className="w-fit" href="">
+          <div className="w-fit">
             <div className="p-7 rounded-lg bg-whitish">
               <img
-                className="mx-auto md:mx-0 md:mr-auto"
+                className="mx-auto"
                 src={projectImg4}
                 alt="The Bee Charge Design Project"
               />
