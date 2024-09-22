@@ -1,34 +1,96 @@
 import { useContext } from "react";
 import projectImg from "../assets/portfolio-project.png";
+import projectImg2 from "../assets/portfolio-project2.png";
+import projectImg3 from "../assets/portfolio-project3.png";
+import projectImg4 from "../assets/portfolio-project4.png";
 import { ThemeContext } from "./ThemeContext";
 
 export default function Portfolio() {
-  const { text } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
   return (
     <>
-      <h1 className={`${text} font-semibold md:text-2xl lg:text-[2.5rem]`}>
+      <h1 style={{ color: theme }} className="font-semibold md:text-2xl lg:text-[2.5rem]">
         My Portfolio Projects
       </h1>
       <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
         Explore the artistry and precision in my portfolio projects
       </p>
-      {/* Project Cards */}
-      <a href="">
-        <div className="mt-4 mx-auto lg:w-[90%]">
-          <div className="p-7 rounded-lg bg-whitish md:bg-transparent">
-            <img
-              className="mx-auto md:mx-0 md:mr-auto"
-              src={projectImg}
-              alt="The Bee Charge Design Project"
-            />
+
+      <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
+            <div className="p-7 rounded-lg bg-whitish">
+              <img
+                className="mx-auto w-full"
+                src={projectImg}
+                alt="The Bee Charge Design Project"
+              />
+            </div>
+            <h2
+              style={{ color: theme }}
+              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
+            >
+              The Bee Charge Design
+            </h2>
           </div>
-          <h2
-            className={`${text} mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]`}
-          >
-            The Bee Charge Design
-          </h2>
-        </div>
-      </a>
+        </a>
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
+            <div className="p-7 rounded-lg bg-whitish">
+              <img
+                className="mx-auto w-full"
+                src={projectImg2}
+                alt="The Bee Charge Design Project"
+              />
+            </div>
+
+            <h2
+              style={{ color: theme }}
+              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
+            >
+              The Tafemoni Design
+            </h2>
+          </div>
+        </a>
+
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
+            <div className="p-7 rounded-lg bg-whitish">
+              <img
+                className="mx-auto w-full"
+                src={projectImg3}
+                alt="The Bee Charge Design Project"
+              />
+            </div>
+
+            <h2
+              style={{ color: theme }}
+              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
+            >
+              The Tuunder Charge Design
+            </h2>
+          </div>
+        </a>
+
+        <a className="w-fit min-[500px]:w-full" href="">
+          <div className="w-fit min-[500px]:w-full">
+            <div className="p-7 rounded-lg bg-whitish">
+              <img
+                className="mx-auto w-full"
+                src={projectImg4}
+                alt="The Bee Charge Design Project"
+              />
+            </div>
+
+            <h2
+              style={{ color: theme }}
+              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
+            >
+              The GIIP Design
+            </h2>
+          </div>
+        </a>
+      </div>
     </>
   );
 }

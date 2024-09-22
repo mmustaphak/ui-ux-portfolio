@@ -23,7 +23,7 @@ export async function action({ request }) {
 export default function GetInTouchForm() {
   const formResponse = useActionData();
 
-  const { background, text } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <Form
@@ -31,10 +31,11 @@ export default function GetInTouchForm() {
       className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]"
     >
       {formResponse && (
-        <p className={`text-xl font-bold ${text}`}>{formResponse}</p>
+        <p style={{ color: theme }} className="text-xl font-bold">{formResponse}</p>
       )}
       <label
-        className={`${text} block font-medium text-left md:mt-6 lg:text-2xl`}
+        style={{ color: theme }}
+        className="block font-medium text-left md:mt-6 lg:text-2xl"
       >
         Name <br />
         <input
@@ -46,7 +47,8 @@ export default function GetInTouchForm() {
         />
       </label>
       <label
-        className={`${text} block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl`}
+        style={{ color: theme }}
+        className="block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl"
       >
         Email Address <br />
         <input
@@ -58,7 +60,8 @@ export default function GetInTouchForm() {
         />
       </label>
       <label
-        className={`${text} block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl`}
+        style={{ color: theme }}
+        className="block mt-4 font-medium text-left md:mt-6 lg:mt-8 lg:text-2xl"
       >
         Message <br />
         <textarea
@@ -70,7 +73,8 @@ export default function GetInTouchForm() {
       </label>
 
       <button
-        className={`${background} py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg`}
+        style={{ background: theme }}
+        className="py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg"
         type="submit"
         disabled={formResponse}
       >

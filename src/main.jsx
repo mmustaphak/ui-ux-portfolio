@@ -15,6 +15,7 @@ import Services from "./pages/Services";
 import { action } from "./components/GetInTouchForm";
 import Splat from "./pages/Splat";
 import Error from "./components/Error";
+import { ThemeProvider } from "./components/ThemeContext";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -38,6 +39,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>,
 );
