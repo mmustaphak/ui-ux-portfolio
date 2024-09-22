@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout";
-import Index from "./pages/Home";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -16,6 +16,7 @@ import { action } from "./components/GetInTouchForm";
 import Splat from "./pages/Splat";
 import Error from "./components/Error";
 import { ThemeProvider } from "./components/ThemeContext";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -28,7 +29,7 @@ const router = createBrowserRouter(
         </Layout>
       }
     >
-      <Route index element={<Index />} />
+      <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="portfolio" element={<Portfolio />} />
       <Route path="services" element={<Services />} />
