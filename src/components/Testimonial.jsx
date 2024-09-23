@@ -91,13 +91,13 @@ export default function Testimonial() {
     );
   }
 
-  const renderedTestimonials = data.map((testimonial, index) => (
-    <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
-  ));
+  // const renderedTestimonials = data.map((testimonial, index) => (
+  //   <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
+  // ));
 
-  const navigationButtons = data.map((person, index) => (
-    <NavButton key={index} index={index} />
-  ));
+  // const navigationButtons = data.map((person, index) => (
+  //   <NavButton key={index} index={index} />
+  // ));
 
   return (
     <Suspense fallback={<h2>Loading 🌀</h2>}>
@@ -105,10 +105,19 @@ export default function Testimonial() {
         {(data) => (
           <>
             <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
-              {renderedTestimonials}
+              {
+                data.map((testimonial, index) => (
+                  <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
+                ))
+              }
             </div>
             <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
-              {navigationButtons}
+              {/* {navigationButtons} */}
+              {
+                data.map((person, index) => (
+                  <NavButton key={index} index={index} />
+                ))
+              }
             </div>
           </>
         )}
