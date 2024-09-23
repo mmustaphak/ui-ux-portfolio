@@ -1,11 +1,11 @@
-import { useContext, useRef, useState } from "react";
+import { Suspense, useContext, useRef, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
-import { defer, useLoaderData } from "react-router-dom";
+import { Await, defer, useLoaderData } from "react-router-dom";
 
 export async function loader() {
   const testimonialData = client.fetch("*[_type == 'testimonial']{name, message}")
-  return defer({testimonialData})
+  return defer({ testimonialData })
 }
 
 
@@ -14,7 +14,7 @@ export default function Testimonial() {
   const testimonialRef = useRef(null);
   const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
   const theme = useContext(ThemeContext);
-  const {testimonialData: data} = useLoaderData()
+  const { testimonialData: data } = useLoaderData()
 
 
   function getMap() {
@@ -63,7 +63,7 @@ export default function Testimonial() {
         data-index={index}
       >
         <h3
-          style={{color: theme}}
+          style={{ color: theme }}
           className="text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]"
         >
           From {name}
@@ -100,13 +100,19 @@ export default function Testimonial() {
   ));
 
   return (
-    <>
-      <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
-        {renderedTestimonials}
-      </div>
-      <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
-        {navigationButtons}
-      </div>
-    </>
+    <Suspense fallback={<h2>Loading 🌀</h2>}>
+      <Await resolve={data}>
+        {(data) => (
+          <>
+            <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
+              {renderedTestimonials}
+            </div>
+            <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
+              {navigationButtons}
+            </div>
+          </>
+        )}
+      </Await>
+    </Suspense>
   );
 }
