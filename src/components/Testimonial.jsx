@@ -1,10 +1,11 @@
 import { useContext, useRef, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
-import { useLoaderData } from "react-router-dom";
+import { defer, useLoaderData } from "react-router-dom";
 
 export async function loader() {
-  return await client.fetch("*[_type == 'testimonial']{name, message}")
+  const testimonialData = client.fetch("*[_type == 'testimonial']{name, message}")
+  return defer({testimonialData})
 }
 
 
@@ -13,7 +14,7 @@ export default function Testimonial() {
   const testimonialRef = useRef(null);
   const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
   const theme = useContext(ThemeContext);
-  const data = useLoaderData()
+  const {testimonialData: data} = useLoaderData()
 
 
   function getMap() {
