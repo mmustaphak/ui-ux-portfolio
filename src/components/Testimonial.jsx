@@ -91,14 +91,6 @@ export default function Testimonial() {
     );
   }
 
-  // const renderedTestimonials = data.map((testimonial, index) => (
-  //   <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
-  // ));
-
-  // const navigationButtons = data.map((person, index) => (
-  //   <NavButton key={index} index={index} />
-  // ));
-
   return (
     <Suspense fallback={<h2>Loading 🌀</h2>}>
       <Await resolve={data}>
@@ -111,15 +103,16 @@ export default function Testimonial() {
                 ))
               }
             </div>
-            <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
-              {/* {navigationButtons} */}
-              {
-                data.map((person, index) => (
-                  <NavButton key={index} index={index} />
-                ))
-              }
-            </div>
-          </>
+            {
+              data.length > 1 && 
+              <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
+                {
+                  data.map((person, index) => (
+                    <NavButton key={index} index={index} />
+                  ))
+                }
+              </div>
+            }          </>
         )}
       </Await>
     </Suspense>
