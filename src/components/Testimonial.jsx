@@ -4,8 +4,8 @@ import { client } from "../sanity";
 import { Await, defer, useLoaderData } from "react-router-dom";
 
 export async function loader() {
-  const testimonialData = client.fetch("*[_type == 'testimonial']{name, message}")
-  return defer({ testimonialData })
+  const testimonialPromise = client.fetch("*[_type == 'testimonial']{name, message}")
+  return defer({ testimonialPromise })
 }
 
 
@@ -14,7 +14,7 @@ export default function Testimonial() {
   const testimonialRef = useRef(null);
   const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
   const theme = useContext(ThemeContext);
-  const { testimonialData: data } = useLoaderData()
+  const { testimonialPromise } = useLoaderData()
 
 
   function getMap() {
@@ -93,21 +93,21 @@ export default function Testimonial() {
 
   return (
     <Suspense fallback={<h2>Loading 🌀</h2>}>
-      <Await resolve={data}>
-        {(data) => (
+      <Await resolve={testimonialPromise}>
+        {(resolvedTestimonials) => (
           <>
             <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
               {
-                data.map((testimonial, index) => (
+                resolvedTestimonials.map((testimonial, index) => (
                   <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
                 ))
               }
             </div>
             {
-              data.length > 1 && 
+              resolvedTestimonials.length > 1 && 
               <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
                 {
-                  data.map((person, index) => (
+                  resolvedTestimonials.map((person, index) => (
                     <NavButton key={index} index={index} />
                   ))
                 }
