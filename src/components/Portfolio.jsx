@@ -7,6 +7,29 @@ import { ThemeContext } from "./ThemeContext";
 
 export default function Portfolio() {
   const theme = useContext(ThemeContext);
+
+  function ProjectCard({name, url, img}) {
+    return (
+      <a className="w-fit min-[500px]:w-full" href={url}>
+        <div className="w-fit min-[500px]:w-full">
+          <div className="p-7 rounded-lg bg-whitish">
+            <img
+              className="mx-auto w-full"
+              src={img}
+              alt="The Bee Charge Design Project"
+            />
+          </div>
+          <h2
+            style={{ color: theme }}
+            className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
+          >
+            {name}
+          </h2>
+        </div>
+      </a>
+    )
+  }
+
   return (
     <>
       <h1 style={{ color: theme }} className="font-semibold md:text-2xl lg:text-[2.5rem]">
@@ -17,79 +40,7 @@ export default function Portfolio() {
       </p>
 
       <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
-        <a className="w-fit min-[500px]:w-full" href="">
-          <div className="w-fit min-[500px]:w-full">
-            <div className="p-7 rounded-lg bg-whitish">
-              <img
-                className="mx-auto w-full"
-                src={projectImg}
-                alt="The Bee Charge Design Project"
-              />
-            </div>
-            <h2
-              style={{ color: theme }}
-              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
-            >
-              The Bee Charge Design
-            </h2>
-          </div>
-        </a>
-        <a className="w-fit min-[500px]:w-full" href="">
-          <div className="w-fit min-[500px]:w-full">
-            <div className="p-7 rounded-lg bg-whitish">
-              <img
-                className="mx-auto w-full"
-                src={projectImg2}
-                alt="The Bee Charge Design Project"
-              />
-            </div>
-
-            <h2
-              style={{ color: theme }}
-              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
-            >
-              The Tafemoni Design
-            </h2>
-          </div>
-        </a>
-
-        <a className="w-fit min-[500px]:w-full" href="">
-          <div className="w-fit min-[500px]:w-full">
-            <div className="p-7 rounded-lg bg-whitish">
-              <img
-                className="mx-auto w-full"
-                src={projectImg3}
-                alt="The Bee Charge Design Project"
-              />
-            </div>
-
-            <h2
-              style={{ color: theme }}
-              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
-            >
-              The Tuunder Charge Design
-            </h2>
-          </div>
-        </a>
-
-        <a className="w-fit min-[500px]:w-full" href="">
-          <div className="w-fit min-[500px]:w-full">
-            <div className="p-7 rounded-lg bg-whitish">
-              <img
-                className="mx-auto w-full"
-                src={projectImg4}
-                alt="The Bee Charge Design Project"
-              />
-            </div>
-
-            <h2
-              style={{ color: theme }}
-              className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
-            >
-              The GIIP Design
-            </h2>
-          </div>
-        </a>
+        <ProjectCard name="The Bee Charge Design" img={projectImg} url={""}/>
       </div>
     </>
   );
