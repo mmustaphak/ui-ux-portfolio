@@ -92,7 +92,7 @@ export default function Testimonial() {
   }
 
   return (
-    <Suspense fallback={<h2>Loading 🌀</h2>}>
+    <Suspense fallback={<div style={{ borderColor: theme }} className="animate-[spinner_1s_infinite_0s_linear] mx-auto mt-4 size-4 border-x-2 border-t-2 rounded-full"></div>}>
       <Await resolve={testimonialPromise}>
         {(resolvedTestimonials) => (
           <>
@@ -104,7 +104,7 @@ export default function Testimonial() {
               }
             </div>
             {
-              resolvedTestimonials.length > 1 && 
+              resolvedTestimonials.length > 1 &&
               <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
                 {
                   resolvedTestimonials.map((person, index) => (
@@ -112,7 +112,8 @@ export default function Testimonial() {
                   ))
                 }
               </div>
-            }          </>
+            }
+          </>
         )}
       </Await>
     </Suspense>

@@ -21,3 +21,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes spinner{
+  from {transform: rotate(none);}
+  to {transform: rotate(360deg);} 
+}
