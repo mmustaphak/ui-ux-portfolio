@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import { loader as homeLoader } from "./components/Testimonial.jsx";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
+import { loader as portfolioLoader } from "./components/Portfolio.jsx";
 import Services from "./pages/Services";
 import { action } from "./components/GetInTouchForm";
 import Splat from "./pages/Splat";
@@ -36,7 +37,10 @@ const router = createBrowserRouter(
         loader={homeLoader}
       />
       <Route path="about" element={<About />} />
-      <Route path="portfolio" element={<Portfolio />} />
+      <Route path="portfolio"
+        element={<Portfolio />}
+        loader={portfolioLoader}
+      />
       <Route path="services" element={<Services />} />
       <Route path="*" element={<Splat />} />
     </Route>,

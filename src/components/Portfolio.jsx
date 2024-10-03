@@ -4,6 +4,13 @@ import projectImg2 from "../assets/portfolio-project2.png";
 import projectImg3 from "../assets/portfolio-project3.png";
 import projectImg4 from "../assets/portfolio-project4.png";
 import { ThemeContext } from "./ThemeContext";
+import { client } from "../sanity";
+
+export async function loader(){
+  const projectPromise = await client.fetch("*[_type == 'project']{projectName, projectLink, 'imageUrl': projectImage.asset->url}")
+  return null
+}
+
 
 export default function Portfolio() {
   const theme = useContext(ThemeContext);
