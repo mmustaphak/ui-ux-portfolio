@@ -6,6 +6,7 @@ import projectImg3 from "../assets/portfolio-project3.png";
 import projectImg4 from "../assets/portfolio-project4.png";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
+import Spinner from "./Spinner";
 
 export async function loader() {
   const projectPromise = client.fetch("*[_type == 'project']{projectName, projectLink, 'imageUrl': projectImage.asset->url}")
@@ -53,15 +54,15 @@ export default function Portfolio() {
       </p>
 
       <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<Spinner />}>
           <Await resolve={projectPromise}>
             {
-              (projectData)=>{
-                return projectData.map(({projectName, imageUrl, projectLink})=>(
-                  <ProjectCard 
-                    key={projectName} 
-                    name={projectName} 
-                    img={imageUrl} 
+              (projectData) => {
+                return projectData.map(({ projectName, imageUrl, projectLink }) => (
+                  <ProjectCard
+                    key={projectName}
+                    name={projectName}
+                    img={imageUrl}
                     url={projectLink} />
                 ))
               }

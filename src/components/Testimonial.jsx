@@ -2,6 +2,7 @@ import { Suspense, useContext, useRef, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
 import { Await, defer, useLoaderData } from "react-router-dom";
+import Spinner from "./Spinner";
 
 export async function loader() {
   const testimonialPromise = client.fetch("*[_type == 'testimonial']{name, message}")
@@ -92,7 +93,7 @@ export default function Testimonial() {
   }
 
   return (
-    <Suspense fallback={<div style={{ borderColor: theme }} className="animate-[spinner_1s_infinite_0s_linear] mx-auto mt-4 size-4 border-x-2 border-t-2 rounded-full"></div>}>
+    <Suspense fallback={<Spinner />}>
       <Await resolve={testimonialPromise}>
         {(resolvedTestimonials) => (
           <>
