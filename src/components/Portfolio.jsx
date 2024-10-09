@@ -53,8 +53,8 @@ export default function Portfolio() {
         Explore the artistry and precision in my portfolio projects
       </p>
 
-      <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
-        <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner />}>
+        <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
           <Await resolve={projectPromise}>
             {
               (projectData) => {
@@ -68,8 +68,8 @@ export default function Portfolio() {
               }
             }
           </Await>
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
     </>
   );
 }
