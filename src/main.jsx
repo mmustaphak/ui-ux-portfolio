@@ -33,6 +33,7 @@ const router = createBrowserRouter(
       <Route
         index
         element={<Home />}
+        loader={portfolioLoader}
       />
       <Route path="about" element={<About />} />
       <Route path="portfolio"
