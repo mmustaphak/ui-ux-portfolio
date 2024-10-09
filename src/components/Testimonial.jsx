@@ -26,11 +26,9 @@ const data = [
 ];
 
 export default function Testimonial() {
-
   const testimonialRef = useRef(null);
   const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
   const theme = useContext(ThemeContext);
-
 
   function getMap() {
     if (!testimonialRef.current) {
@@ -78,7 +76,7 @@ export default function Testimonial() {
         data-index={index}
       >
         <h3
-          style={{color: theme}}
+          style={{ color: theme }}
           className="text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]"
         >
           From {name}
@@ -91,7 +89,6 @@ export default function Testimonial() {
   }
 
   function NavButton({ index }) {
-
     return (
       <>
         <style>{`:checked{background: ${theme}}`}</style>

@@ -30,13 +30,10 @@ const router = createBrowserRouter(
         </Layout>
       }
     >
-      <Route
-        index
-        element={<Home />}
-        loader={portfolioLoader}
-      />
+      <Route index element={<Home />} loader={portfolioLoader} />
       <Route path="about" element={<About />} />
-      <Route path="portfolio"
+      <Route
+        path="portfolio"
         element={<Portfolio />}
         loader={portfolioLoader}
       />

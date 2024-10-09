@@ -10,9 +10,8 @@ import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 export default function Layout({ children }) {
-
   const year = new Date().getFullYear();
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
 
   return (
     <div className="flex flex-col text-center text-grey">
@@ -27,7 +26,7 @@ export default function Layout({ children }) {
 
         <div>
           <h1
-            style={{color:theme}}
+            style={{ color: theme }}
             className="mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]"
           >
             Get In Touch
@@ -40,7 +39,7 @@ export default function Layout({ children }) {
       </div>
 
       <footer
-        style={{background:theme}}
+        style={{ background: theme }}
         className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]"
       >
         <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">

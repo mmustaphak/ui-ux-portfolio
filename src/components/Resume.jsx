@@ -6,7 +6,7 @@ export default function Resume() {
   const theme = useContext(ThemeContext);
   return (
     <div
-      style={{background: theme}}
+      style={{ background: theme }}
       className="mt-6 mx-auto py-3 px-4 flex justify-between items-center rounded-[4px] text-white md:py-8 md:px-10 md:rounded-lg lg:mt-[50px] lg:px-[60px] lg:rounded-2xl lg:py-[45px]"
     >
       <p className="font-medium text-[8.58px] md:text-xl md:leading-[normal] lg:text-[1.4rem] min-[1134px]:text-[2rem]">

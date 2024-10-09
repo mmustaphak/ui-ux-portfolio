@@ -6,15 +6,15 @@ import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 
 export default function Home() {
-
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
 
   return (
     <section>
       <div>
         <h1
           style={{ color: theme }}
-          className="font-semibold md:text-2xl lg:text-[2.5rem]">
+          className="font-semibold md:text-2xl lg:text-[2.5rem]"
+        >
           My name is Mustapha Danladi
         </h1>
         <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
@@ -57,7 +57,8 @@ export default function Home() {
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
         <h1
           style={{ color: theme }}
-          className="font-semibold md:text-2xl lg:text-[2.5rem]">
+          className="font-semibold md:text-2xl lg:text-[2.5rem]"
+        >
           Testimonial
         </h1>
         <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">

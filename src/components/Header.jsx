@@ -5,14 +5,13 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 export default function Header() {
-
   const [isHamburger, setIsHamburger] = useState(false);
 
   function handleToggle() {
     setIsHamburger((oldIsHamburger) => !oldIsHamburger);
   }
 
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
 
   return (
     <header>
@@ -67,7 +66,7 @@ export default function Header() {
         </ul>
 
         <button
-          style={{background:theme}}
+          style={{ background: theme }}
           className="hidden py-2 w-full max-w-[110px] ml-4 rounded-md font-medium text-white md:ml-0 min-[500px]:block min-[500px]:max-w-[105px] md:px-0 lg:max-w-[206px] lg:py-[10px] lg:px-[58px]"
         >
           Hire Me

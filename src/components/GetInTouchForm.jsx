@@ -31,7 +31,9 @@ export default function GetInTouchForm() {
       className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]"
     >
       {formResponse && (
-        <p style={{ color: theme }} className="text-xl font-bold">{formResponse}</p>
+        <p style={{ color: theme }} className="text-xl font-bold">
+          {formResponse}
+        </p>
       )}
       <label
         style={{ color: theme }}

@@ -24,12 +24,8 @@ const servicesDataArr = [
   },
 ];
 
-
 export default function Services() {
-
-  const theme = useContext(ThemeContext)
-
-
+  const theme = useContext(ThemeContext);
 
   function ServiceCard({ title, description }) {
     const theme = useContext(ThemeContext);
@@ -99,10 +95,12 @@ export default function Services() {
     <ServiceCard key={service.title} {...service} />
   ));
 
-
   return (
     <>
-      <h1 style={{ color: theme }} className="font-semibold md:text-2xl lg:text-[2.5rem]">
+      <h1
+        style={{ color: theme }}
+        className="font-semibold md:text-2xl lg:text-[2.5rem]"
+      >
         My Services
       </h1>
       <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
