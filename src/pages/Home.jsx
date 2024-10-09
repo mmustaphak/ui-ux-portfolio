@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
-        <Portfolio />
+        {/* <Portfolio /> */}
       </div>
 
       <div

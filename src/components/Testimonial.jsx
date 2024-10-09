@@ -1,21 +1,35 @@
-import { Suspense, useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
-import { client } from "../sanity";
-import { Await, defer, useLoaderData } from "react-router-dom";
-import Spinner from "./Spinner";
 
-export async function loader() {
-  const testimonialPromise = client.fetch("*[_type == 'testimonial']{name, message}")
-  return defer({ testimonialPromise })
-}
-
+const data = [
+  {
+    name: "Alamaster",
+    message:
+      "I just wanted to share a quick note and let you know that you are doing  really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
+  },
+  {
+    name: "Dev Ade",
+    message:
+      "I pray you become the best version of yourself and also the biggest techie in Arewa and Naija in a whole insha Allah.",
+  },
+  {
+    name: "Techbro",
+    message:
+      "You have some cool stuff here, i’ll send your work to my other guys to see what the outcome will be. Don’t stop designing bcos u really have some good concept.",
+  },
+  { name: "Damilola", message: "This is impressive, i must commend you." },
+  {
+    name: "GDG",
+    message:
+      "Thanks to you and your team for bringing your passion and creativity to the design of #DevFest",
+  },
+];
 
 export default function Testimonial() {
 
   const testimonialRef = useRef(null);
   const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
   const theme = useContext(ThemeContext);
-  const { testimonialPromise } = useLoaderData()
 
 
   function getMap() {
@@ -64,7 +78,7 @@ export default function Testimonial() {
         data-index={index}
       >
         <h3
-          style={{ color: theme }}
+          style={{color: theme}}
           className="text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]"
         >
           From {name}
@@ -92,31 +106,22 @@ export default function Testimonial() {
     );
   }
 
+  const renderedTestimonials = data.map((testimonial, index) => (
+    <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
+  ));
+
+  const navigationButtons = data.map((person, index) => (
+    <NavButton key={index} index={index} />
+  ));
+
   return (
-    <Suspense fallback={<Spinner />}>
-      <Await resolve={testimonialPromise}>
-        {(resolvedTestimonials) => (
-          <>
-            <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
-              {
-                resolvedTestimonials.map((testimonial, index) => (
-                  <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
-                ))
-              }
-            </div>
-            {
-              resolvedTestimonials.length > 1 &&
-              <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
-                {
-                  resolvedTestimonials.map((person, index) => (
-                    <NavButton key={index} index={index} />
-                  ))
-                }
-              </div>
-            }
-          </>
-        )}
-      </Await>
-    </Suspense>
+    <>
+      <div className="testimonial relative w-full flex mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8">
+        {renderedTestimonials}
+      </div>
+      <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
+        {navigationButtons}
+      </div>
+    </>
   );
 }
