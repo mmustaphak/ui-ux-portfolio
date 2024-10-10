@@ -24,6 +24,7 @@ export default function Portfolio() {
       .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
   }, [])
 
+
   function ProjectCard({ name, url, img }) {
     return (
       <a className="w-fit min-[500px]:w-full" href={url}>
@@ -62,7 +63,9 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
           <Await resolve={projectPromise}>
             {(projectData) => {
-              return projectData.map(
+
+              const recentProjects = projectData.slice(0, 7)
+              return recentProjects.map(
                 ({ projectName, imageUrl, projectLink }) => (
                   <ProjectCard
                     key={projectName}
