@@ -1,11 +1,13 @@
-import { Suspense, useContext } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import { Await, defer, useLoaderData } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
 import Spinner from "./Spinner";
 
 export async function loader() {
-  const projectPromise = client.fetch(
+  const sessionCache = JSON.parse(sessionStorage.getItem("projectData"))
+  const cachedPromise = new Promise(resolve => resolve(sessionCache))
+  const projectPromise = sessionCache != null ? cachedPromise : client.fetch(
     "*[_type == 'project']{projectName, projectLink, 'imageUrl': projectImage.asset->url}",
   );
   return defer({ projectPromise });
@@ -14,6 +16,11 @@ export async function loader() {
 export default function Portfolio() {
   const theme = useContext(ThemeContext);
   const { projectPromise } = useLoaderData();
+
+  useEffect(()=>{
+    projectPromise
+      .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
+  },[])
 
   function ProjectCard({ name, url, img }) {
     return (
