@@ -61,7 +61,7 @@ export default function Header() {
             <NavLink to="portfolio">Portfolio</NavLink>
           </li>
           <li>
-            <NavLink to="/">Blog</NavLink>
+            <NavLink to="blog">Blog</NavLink>
           </li>
         </ul>
 
