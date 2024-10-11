@@ -1,4 +1,4 @@
-import { Suspense, useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import { Await, defer, useLoaderData } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
@@ -15,6 +15,7 @@ export async function loader() {
 
 
 export default function Portfolio() {
+  const [isShown, setIsShown] = useState(false)
   const theme = useContext(ThemeContext);
   const { projectPromise } = useLoaderData();
 
@@ -63,9 +64,13 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
           <Await resolve={projectPromise}>
             {(projectData) => {
+              const recentProject = 6
+              const allProject = projectData.length
 
-              const recentProjects = projectData.slice(0, 7)
-              return recentProjects.map(
+              const shownProjects = (location.pathname === "/portfolio" || isShown) ? 
+              projectData.slice(0, allProject): projectData.slice(0, recentProject)
+
+              return shownProjects.map(
                 ({ projectName, imageUrl, projectLink }) => (
                   <ProjectCard
                     key={projectName}
