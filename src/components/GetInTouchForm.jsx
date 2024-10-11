@@ -16,7 +16,7 @@ export async function action({ request }) {
   if (data.success) {
     return "Message sent successfully ✔";
   } else {
-    throw data;
+    throw "Failed to send Email";
   }
 }
 
