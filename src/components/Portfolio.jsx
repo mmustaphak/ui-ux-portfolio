@@ -29,7 +29,7 @@ export default function Portfolio() {
 
   function ProjectCard({ name, url, img }) {
     return (
-      <a className="w-fit min-[500px]:w-full" href={url}>
+      <a href={url}>
         <div className="w-fit min-[500px]:w-full">
           <div className="p-7 rounded-lg bg-whitish">
             <img
@@ -62,7 +62,7 @@ export default function Portfolio() {
       </p>
 
       <Suspense fallback={<Spinner />}>
-        <div className="grid grid-cols-1 justify-items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
+        <div className="grid grid-cols-1 justify-items-center items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
           <Await resolve={projectPromise}>
             {(projectData) => {
               const recentProject = 6
