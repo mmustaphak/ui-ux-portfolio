@@ -1,4 +1,4 @@
-import { Suspense, useContext, useEffect, useState } from "react";
+import { Suspense, useContext, useState } from "react";
 import { Await, defer, useLoaderData } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
@@ -6,11 +6,19 @@ import Spinner from "./Spinner";
 
 export async function loader() {
   const sessionCache = JSON.parse(sessionStorage.getItem("projectData"))
-  const cachedPromise = new Promise(resolve => resolve(sessionCache))
-  const projectPromise = sessionCache != null ? cachedPromise : client.fetch(
-    "*[_type == 'project']{projectName, projectLink, 'imageUrl': projectImage.asset->url}",
-  );
-  return defer({ projectPromise });
+
+  if (sessionCache) {
+    const projectPromise = new Promise(resolve => resolve(sessionCache))
+    return defer({projectPromise})
+  } else {
+    const projectPromise = client.fetch(
+      "*[_type == 'project']{projectName, projectLink, 'imageUrl': projectImage.asset->url}",
+    )
+    projectPromise
+      .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
+
+    return defer({ projectPromise });
+  }
 }
 
 
@@ -18,13 +26,6 @@ export default function Portfolio() {
   const [isShown, setIsShown] = useState(false)
   const theme = useContext(ThemeContext);
   const { projectPromise } = useLoaderData();
-
-
-  useEffect(() => {
-    projectPromise
-      .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
-  }, [])
-
 
   function ProjectCard({ name, url, img }) {
     return (
