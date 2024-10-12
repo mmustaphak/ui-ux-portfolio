@@ -14,7 +14,7 @@ export async function action({ request }) {
 
   const data = await response.json();
 
-  data.success ? "Message sent successfully ✔" : "Failed to send Email"
+  return data.success ? "Message sent successfully ✔" : "Failed to send Email"
 }
 
 export default function GetInTouchForm() {
@@ -30,6 +30,16 @@ export default function GetInTouchForm() {
           {formResponse}
         </p> : <Spinner />
     }
+  }
+
+  function handleClick({target}){
+    const formData = new FormData(target.form)
+    for(const value of formData.values()){
+      if(!value){ // empty string
+        return 
+      } 
+    }
+    setIsClicked(true)
   }
 
   return (
@@ -79,7 +89,7 @@ export default function GetInTouchForm() {
       </label>
 
       <button
-        onClick={() => setIsClicked(true)}
+        onClick={(e) => handleClick(e)}
         style={{ background: theme }}
         className="py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg"
         type="submit"
