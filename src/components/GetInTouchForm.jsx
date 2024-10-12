@@ -14,11 +14,7 @@ export async function action({ request }) {
 
   const data = await response.json();
 
-  if (data.success) {
-    return "Message sent successfully ✔";
-  } else {
-    throw "Failed to send Email";
-  }
+  data.success ? "Message sent successfully ✔" : "Failed to send Email"
 }
 
 export default function GetInTouchForm() {
@@ -26,10 +22,6 @@ export default function GetInTouchForm() {
   const [isClicked, setIsClicked] = useState(false)
   const formResponse = useActionData();
   const theme = useContext(ThemeContext);
-
-  function handleClick() {
-    setIsClicked(true)
-  }
 
   function SubmissionMessage() {
     if (isClicked) {
@@ -87,7 +79,7 @@ export default function GetInTouchForm() {
       </label>
 
       <button
-        onClick={handleClick}
+        onClick={() => setIsClicked(true)}
         style={{ background: theme }}
         className="py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg"
         type="submit"
