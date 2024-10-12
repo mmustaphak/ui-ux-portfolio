@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Form, useActionData } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
+import Spinner from "./Spinner.jsx"
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -30,16 +31,22 @@ export default function GetInTouchForm() {
     setIsClicked(true)
   }
 
+  function SubmissionMessage() {
+    if (isClicked) {
+      return formResponse ?
+        <p style={{ color: theme }} className="text-xl font-bold">
+          {formResponse}
+        </p> : <Spinner />
+    }
+  }
+
   return (
     <Form
       method="post"
       className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]"
     >
-      {formResponse && (
-        <p style={{ color: theme }} className="text-xl font-bold">
-          {formResponse}
-        </p>
-      )}
+      <SubmissionMessage />
+
       <label
         style={{ color: theme }}
         className="block font-medium text-left md:mt-6 lg:text-2xl"
