@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Form, useActionData } from "react-router-dom";
+import { Form, useActionData, useFetcher } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import Spinner from "./Spinner.jsx"
 
@@ -19,8 +19,9 @@ export async function action({ request }) {
 
 export default function GetInTouchForm() {
 
+  const {Form, data} = useFetcher()
+  const formResponse = data
   const [isClicked, setIsClicked] = useState(false)
-  const formResponse = useActionData();
   const theme = useContext(ThemeContext);
 
   function SubmissionMessage() {
