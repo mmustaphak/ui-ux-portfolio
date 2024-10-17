@@ -70,6 +70,7 @@ export default function Portfolio() {
 
 
               if(projectData.length === 0){
+                setIsShown(true) // A small cheat to stop the load More button to render
                 return <h1 style={{color: theme}} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
               }
 
