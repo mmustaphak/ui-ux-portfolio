@@ -68,6 +68,11 @@ export default function Portfolio() {
               const recentProject = 6
               const allProject = projectData.length
 
+
+              if(projectData.length === 0){
+                return <h1 style={{color: theme}} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
+              }
+
               const shownProjects = (location.pathname === "/portfolio" || isShown) ?
                 projectData.slice(0, allProject) : projectData.slice(0, recentProject)
 
