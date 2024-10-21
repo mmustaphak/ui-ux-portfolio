@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export const ThemeContext = createContext(null);
+export const ThemeContext = createContext('#151515');
 
 export function ThemeProvider({ children }) {
   function randomTheme() {
