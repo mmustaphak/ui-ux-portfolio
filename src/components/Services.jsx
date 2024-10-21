@@ -31,7 +31,7 @@ export default function Services() {
     const theme = useContext(ThemeContext);
 
     return (
-      <div className="mt-2 py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]">
+      <div className="py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]">
         <svg
           className="mx-auto lg:size-[109px]"
           width="68"
@@ -107,7 +107,7 @@ export default function Services() {
         Transforming visions into captivating realities where design meets
         innovation for an exceptional UI/UX journey.
       </p>
-      <div className="grid mx-auto mt-2  justify-center md:grid-cols-2 md:gap-5 md:max-w-[700px] lg:max-w-none lg:gap-10 lg:mt-8">
+      <div className="grid gap-4 mx-auto mt-2 justify-center md:grid-cols-2 md:gap-5 md:max-w-[700px] lg:max-w-none lg:gap-10 lg:mt-8">
         {renderedServices}
       </div>
     </>
