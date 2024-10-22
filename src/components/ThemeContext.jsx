@@ -1,16 +1,26 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext('#151515');
 
 export function ThemeProvider({ children }) {
-  function randomTheme() {
-    const themes = ["#151515", "#00A070", "#000958"]; // black, green and blue theme
-    const randomIndex = Math.floor(Math.random() * 3);
-    return themes[randomIndex];
-  }
+
+  const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
+
+  const themes = ["#151515", "#00A070", "#000958"]; // black, green and blue theme
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentThemeIndex(oldIndex => {
+        const nextIndex = (oldIndex + 1) % themes.length
+        return nextIndex
+      })
+    }, 5000);
+  }, [currentThemeIndex])
+
+
 
   return (
-    <ThemeContext.Provider value={randomTheme()}>
+    <ThemeContext.Provider value={themes[currentThemeIndex]}>
       {children}
     </ThemeContext.Provider>
   );
