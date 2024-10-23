@@ -4,6 +4,7 @@ import Portfolio from "../components/Portfolio";
 import Testimonial from "../components/Testimonial";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
+import H1 from "../components/Reusable/H1";
 
 export default function Home() {
   const theme = useContext(ThemeContext);
@@ -11,12 +12,7 @@ export default function Home() {
   return (
     <section>
       <div>
-        <h1
-          style={{ color: theme }}
-          className="font-semibold md:text-2xl lg:text-[2.5rem]"
-        >
-          My name is Mustapha Danladi
-        </h1>
+        <H1>My name is Mustapha Danladi</H1>
         <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
           A UI/UX Designer currently designing thoughtful experience, beautiful
           websites, products, and design system to help designers, product
@@ -55,12 +51,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
-        <h1
-          style={{ color: theme }}
-          className="font-semibold md:text-2xl lg:text-[2.5rem]"
-        >
-          Testimonial
-        </h1>
+        <H1>Testimonial</H1>
         <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
           Testimonials Speak louder than words.
         </p>

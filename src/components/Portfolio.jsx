@@ -3,13 +3,14 @@ import { Await, defer, useLoaderData } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
 import Spinner from "./Spinner";
+import H1 from "./Reusable/H1";
 
 export async function loader() {
   const sessionCache = JSON.parse(sessionStorage.getItem("projectData"))
 
   if (sessionCache) {
     const projectPromise = new Promise(resolve => resolve(sessionCache))
-    return defer({projectPromise})
+    return defer({ projectPromise })
   } else {
     const projectPromise = client.fetch(
       "*[_type == 'project']{projectName, projectLink, 'imageUrl': projectImage.asset->url}",
@@ -51,12 +52,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <h1
-        style={{ color: theme }}
-        className="font-semibold md:text-2xl lg:text-[2.5rem]"
-      >
-        My Portfolio Projects
-      </h1>
+      <H1>My Portfolio Projects</H1>
       <p className="mt-2 text-[0.75rem] mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
         Explore the artistry and precision in my portfolio projects
       </p>
@@ -69,9 +65,9 @@ export default function Portfolio() {
               const allProject = projectData.length
 
 
-              if(projectData.length === 0){
+              if (projectData.length === 0) {
                 setIsShown(true) // A small cheat to stop the load More button to render
-                return <h1 style={{color: theme}} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
+                return <h1 style={{ color: theme }} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
               }
 
               const shownProjects = (location.pathname === "/portfolio" || isShown) ?
@@ -91,9 +87,9 @@ export default function Portfolio() {
           </Await>
         </div>
         {
-          ((location.pathname === "/" && isShown === false )) &&
+          ((location.pathname === "/" && isShown === false)) &&
           <button
-            onClick={()=>setIsShown(true)}
+            onClick={() => setIsShown(true)}
             style={{ backgroundColor: theme }}
             className="mx-auto py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg"
           >
