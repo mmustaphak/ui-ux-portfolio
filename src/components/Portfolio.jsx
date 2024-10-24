@@ -30,11 +30,11 @@ export default function Portfolio() {
 
   function ProjectCard({ name, url, img }) {
     return (
-      <a href={url}>
+      <a href={url}> 
         <div className="w-fit min-[500px]:w-full">
           <div className="p-7 rounded-lg bg-whitish">
             <img
-              className="mx-auto w-full"
+              className="mx-auto w-full aspect-video object-cover"
               src={img}
               alt="The Bee Charge Design Project"
             />
