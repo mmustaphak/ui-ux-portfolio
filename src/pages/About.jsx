@@ -4,6 +4,7 @@ import greenMufteey from "../assets/green-mufteey.svg";
 import blueMufteey from "../assets/blue-mufteey.svg";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
+import H1 from "../components/Reusable/H1";
 
 export default function About() {
   const theme = useContext(ThemeContext);
@@ -21,12 +22,7 @@ export default function About() {
 
   return (
     <section className="mt-6 min-[400px]:mt-0 lg:-mt-6">
-      <h1
-        style={{ color: theme }}
-        className="font-semibold md:text-2xl lg:text-[2.5rem]"
-      >
-        About Me
-      </h1>
+      <H1>About Me</H1>
 
       <img
         className="mx-auto mt-4 w-[29.4%] max-w-[160px] md:mt-6 lg:min-w-[329px] lg:mt-8"

@@ -8,6 +8,7 @@ import GetInTouchForm from "./GetInTouchForm";
 import logo from "../assets/footer-logo.svg";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
+import H1 from "./Reusable/H1";
 
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
@@ -25,12 +26,7 @@ export default function Layout({ children }) {
         )}
 
         <div>
-          <h1
-            style={{ color: theme }}
-            className="mt-auto font-semibold min-[480px]:text-2xl lg:text-[2.5rem]"
-          >
-            Get In Touch
-          </h1>
+          <H1>Get In Touch</H1>
           <p className="text-[0.75rem] mt-2 mx-auto max-w-[512px] md:max-w-[760px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:max-w-[1320px] lg:text-[2rem]">
             Let’s create something extraordinary- Get In Touch
           </p>
