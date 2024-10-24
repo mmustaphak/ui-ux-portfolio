@@ -34,7 +34,7 @@ export default function Portfolio() {
         <div className="w-fit min-[500px]:w-full">
           <div className="p-7 rounded-lg bg-whitish">
             <img
-              className="mx-auto w-full aspect-video object-cover"
+              className="mx-auto w-full aspect-video object-cover rounded-lg"
               src={img}
               alt="The Bee Charge Design Project"
             />
