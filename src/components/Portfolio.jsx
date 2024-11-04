@@ -30,7 +30,7 @@ export default function Portfolio() {
 
   function ProjectCard({ name, url, img }) {
     return (
-      <a href={url}> 
+      <a href={url} className="transition-all focus:-translate-y-2 focus:scale-105 hover:-translate-y-2 hover:scale-105"> 
         <div className="w-fit min-[500px]:w-full">
           <div className="p-7 rounded-lg bg-whitish">
             <img

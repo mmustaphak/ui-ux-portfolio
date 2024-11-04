@@ -95,7 +95,7 @@ export default function Header() {
             <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
           </NavLink>
           <NavLink to="blog" onClick={handleToggle}>
-            <li className="mt-7 mx-auto w-fit text-center">Blog</li>
+              <li className="mt-7 mx-auto w-fit text-center">Blog</li>
           </NavLink>
         </ul>
       </nav>
