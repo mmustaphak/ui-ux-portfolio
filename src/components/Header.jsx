@@ -78,7 +78,7 @@ export default function Header() {
       </nav>
 
       <nav
-        className={`${isHamburger === false && "hidden"} fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white`}
+        className={`${isHamburger === false ? "-translate-x-full" : "translate-x-0"} transition-all duration-500 fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white min-[500px]:hidden`}
       >
         <button onClick={handleToggle} className="self-start">
           <img src={close} alt="Close " />
