@@ -8,14 +8,12 @@ export function ThemeProvider({ children }) {
 
   const themes = ["#151515", "#00A070", "#000958"]; // black, green and blue theme
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCurrentThemeIndex(oldIndex => {
-        const nextIndex = (oldIndex + 1) % themes.length
-        return nextIndex
-      })
-    }, 5000);
-  }, [currentThemeIndex])
+  setInterval(()=>{
+    setCurrentThemeIndex(oldIndex => {
+      const nextIndex = (oldIndex + 1) % themes.length
+      return nextIndex
+    })
+  },5000)
 
 
 
