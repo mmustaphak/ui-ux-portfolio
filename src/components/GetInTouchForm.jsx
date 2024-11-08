@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Form, useActionData, useFetcher } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import Spinner from "./Spinner.jsx"
 
@@ -19,7 +19,7 @@ export async function action({ request }) {
 
 export default function GetInTouchForm() {
 
-  const {Form, data} = useFetcher()
+  const { Form, data } = useFetcher()
   const formResponse = data
   const [isClicked, setIsClicked] = useState(false)
   const theme = useContext(ThemeContext);
@@ -33,12 +33,12 @@ export default function GetInTouchForm() {
     }
   }
 
-  function handleClick({target}){
+  function handleClick({ target }) {
     const formData = new FormData(target.form)
-    for(const value of formData.values()){
-      if(!value){ // empty string
-        return 
-      } 
+    for (const value of formData.values()) {
+      if (!value) { // empty string
+        return
+      }
     }
     setIsClicked(true)
   }
