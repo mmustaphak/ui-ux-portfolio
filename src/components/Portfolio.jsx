@@ -17,8 +17,8 @@ export async function loader() {
     )
     projectPromise
       .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
+      .catch(console.error("Failed to fetch projects from sanity"))
 
-      console.log(projectPromise)
     return defer({ projectPromise });
   }
 }
@@ -31,7 +31,7 @@ export default function Portfolio() {
 
   function ProjectCard({ name, url, img }) {
     return (
-      <a href={url} className="transition-all focus:-translate-y-2 focus:scale-105 hover:-translate-y-2 hover:scale-105"> 
+      <a href={url} className="transition-all focus:-translate-y-2 focus:scale-105 hover:-translate-y-2 hover:scale-105">
         <div className="w-fit min-[500px]:w-full">
           <div className="p-7 rounded-lg bg-whitish">
             <img
@@ -60,23 +60,19 @@ export default function Portfolio() {
 
       <Suspense fallback={<Spinner />}>
         <div className="grid grid-cols-1 justify-items-center items-center gap-4 mt-4 min-[500px]:grid-cols-2 min-[500px]:gap-x-10 min-[500px]:gap-y-8">
-          <Await resolve={projectPromise}>
+          <Await
+            resolve={projectPromise}
+            errorElement={
+              <h1 style={{ color: theme }} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
+            }
+          >
             {(projectData) => {
               const recentProject = 6
               const allProject = projectData.length
-
-              console.log(projectData)
-
-
-              if (projectData.length === 0) {
-                setIsShown(true) // A small cheat to stop the load More button to render
-                return <h1 style={{ color: theme }} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
-              }
-
               const shownProjects = (location.pathname === "/portfolio" || isShown) ?
                 projectData.slice(0, allProject) : projectData.slice(0, recentProject)
 
-              return shownProjects.map(
+              const renderedProjects = shownProjects.map(
                 ({ projectName, imageUrl, projectLink }) => (
                   <ProjectCard
                     key={projectName}
@@ -86,19 +82,26 @@ export default function Portfolio() {
                   />
                 ),
               );
+
+              return (
+                <>
+                  {renderedProjects}
+                  {
+                    ((location.pathname === "/" && isShown === false)) &&
+                    <button
+                      onClick={() => setIsShown(true)}
+                      style={{ backgroundColor: theme }}
+                      className="mx-auto py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg"
+                    >
+                      Load More
+                    </button>
+                  }
+                </>
+              )
+
             }}
           </Await>
         </div>
-        {
-          ((location.pathname === "/" && isShown === false)) &&
-          <button
-            onClick={() => setIsShown(true)}
-            style={{ backgroundColor: theme }}
-            className="mx-auto py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] mt-4 font-medium rounded-[3.37px] text-[10.11px] text-white disabled:opacity-50 md:py-2 md:text-[18px] md:rounded-md md:max-w-[280px] md:font-semibold md:mt-6 lg:mt-8 lg:pt-[10px] lg:text-2xl lg:rounded-lg"
-          >
-            Load More
-          </button>
-        }
       </Suspense>
     </>
   );
