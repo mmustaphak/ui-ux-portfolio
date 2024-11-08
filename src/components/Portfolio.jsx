@@ -18,6 +18,7 @@ export async function loader() {
     projectPromise
       .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
 
+      console.log(projectPromise)
     return defer({ projectPromise });
   }
 }
@@ -63,6 +64,8 @@ export default function Portfolio() {
             {(projectData) => {
               const recentProject = 6
               const allProject = projectData.length
+
+              console.log(projectData)
 
 
               if (projectData.length === 0) {
