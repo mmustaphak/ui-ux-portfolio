@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext('#151515');
 
@@ -8,12 +8,15 @@ export function ThemeProvider({ children }) {
 
   const themes = ["#151515", "#00A070", "#000958"]; // black, green and blue theme
 
-  setInterval(()=>{
-    setCurrentThemeIndex(oldIndex => {
-      const nextIndex = (oldIndex + 1) % themes.length
-      return nextIndex
-    })
-  },5000)
+  useEffect(() => {
+    setInterval(() => {
+      setCurrentThemeIndex(oldIndex => {
+        const nextIndex = (oldIndex + 1) % themes.length
+        return nextIndex
+      })
+    }, 5000)
+  }, [])
+
 
 
 
