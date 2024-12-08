@@ -24,7 +24,7 @@ export async function getProjectPromise() {
 }
 
 
-export default function Portfolio({ projectPromise }) {
+export default function Portfolio({ projectPromise, isPaginated = false }) {
   const [isShown, setIsShown] = useState(false)
   const theme = useContext(ThemeContext);
 
@@ -68,7 +68,7 @@ export default function Portfolio({ projectPromise }) {
             {(projectData) => {
               const recentProject = 6
               const allProject = projectData.length
-              const shownProjects = (location.pathname === "/portfolio" || isShown) ?
+              const shownProjects = (isPaginated == false || isShown) ?
                 projectData.slice(0, allProject) : projectData.slice(0, recentProject)
 
               const renderedProjects = shownProjects.map(
@@ -86,7 +86,7 @@ export default function Portfolio({ projectPromise }) {
                 <>
                   {renderedProjects}
                   {
-                    ((location.pathname === "/" && isShown === false)) &&
+                    ((isPaginated&& isShown === false)) &&
                     <button
                       onClick={() => setIsShown(true)}
                       style={{ backgroundColor: theme }}
