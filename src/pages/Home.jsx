@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 import H1 from "../components/Reusable/H1";
 import { useLoaderData } from "react-router-dom";
+import HomePortfolio from "../components/HomePortfolio";
 
 
 export function loader() {
@@ -41,7 +42,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
-        <Portfolio projectPromise={projectPromise} />
+        <HomePortfolio projectPromise={projectPromise} />
       </div>
 
       <div
