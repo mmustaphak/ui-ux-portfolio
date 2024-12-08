@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
+import Home, { loader as homeLoader } from "./pages/Home";
 import About from "./pages/About";
 import Portfolio, { loader as portfolioLoader } from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -29,7 +29,7 @@ const router = createBrowserRouter(
         </Layout>
       }
     >
-      <Route index element={<Home />} loader={portfolioLoader} />
+      <Route index element={<Home />} loader={homeLoader} />
       <Route path="about" element={<About />} />
       <Route
         path="portfolio"
