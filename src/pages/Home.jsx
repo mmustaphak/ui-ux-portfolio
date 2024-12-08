@@ -19,12 +19,14 @@ export default function Home() {
           managers and engineers to collaborate together.
         </p>
 
-        <button
-          style={{ background: theme }}
-          className="mt-6 font-medium py-0.5 w-full max-w-[110px] min-[375px]:max-w-[130px] min-[500px]:py-2 rounded-[3.37px] text-[10px] text-white md:mt-7 lg:mt-8 md:text-xl md:max-w-[280px] md:px-0 md:rounded-md lg:max-w-[409px] lg:py-[10px] lg:text-2xl lg:rounded-lg"
-        >
-          Let&apos;s Talk
-        </button>
+        <a href="https://wa.me/+2348127529252">
+          <button
+            style={{ background: theme }}
+            className="mt-6 font-medium py-0.5 w-full max-w-[110px] min-[375px]:max-w-[130px] min-[500px]:py-2 rounded-[3.37px] text-[10px] text-white md:mt-7 lg:mt-8 md:text-xl md:max-w-[280px] md:px-0 md:rounded-md lg:max-w-[409px] lg:py-[10px] lg:text-2xl lg:rounded-lg"
+          >
+            Let&apos;s Talk
+          </button>
+        </a>
       </div>
 
       <div className="mt-16 mx-auto lg:mt-[178px] ">
