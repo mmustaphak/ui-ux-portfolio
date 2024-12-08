@@ -5,7 +5,7 @@ import { client } from "../sanity";
 import Spinner from "./Spinner";
 import H1 from "./Reusable/H1";
 
-export async function loader() {
+export async function getProjectPromise() {
   const sessionCache = JSON.parse(sessionStorage.getItem("projectData"))
 
   if (sessionCache) {
