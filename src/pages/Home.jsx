@@ -1,13 +1,15 @@
 import Services from "../components/Services";
 import Resume from "../components/Resume";
-import Portfolio from "../components/Portfolio";
+import Portfolio, { loader as portfolioComponentLoader } from "../components/Portfolio";
 import Testimonial from "../components/Testimonial";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 import H1 from "../components/Reusable/H1";
+import { useLoaderData } from "react-router-dom";
 
 export default function Home() {
   const theme = useContext(ThemeContext);
+  const { projectPromise } = useLoaderData()
 
   return (
     <section>
@@ -34,7 +36,7 @@ export default function Home() {
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
-        <Portfolio />
+        <Portfolio projectPromise={projectPromise} />
       </div>
 
       <div

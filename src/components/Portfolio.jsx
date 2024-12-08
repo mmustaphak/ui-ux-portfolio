@@ -1,5 +1,5 @@
 import { Suspense, useContext, useState } from "react";
-import { Await, defer, useLoaderData } from "react-router-dom";
+import { Await, defer } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
 import Spinner from "./Spinner";
@@ -24,10 +24,9 @@ export async function loader() {
 }
 
 
-export default function Portfolio() {
+export default function Portfolio({ projectPromise }) {
   const [isShown, setIsShown] = useState(false)
   const theme = useContext(ThemeContext);
-  const { projectPromise } = useLoaderData();
 
   function ProjectCard({ name, url, img }) {
     return (
