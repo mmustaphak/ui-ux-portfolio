@@ -13,7 +13,7 @@ export async function getProjectPromise() {
     return defer({ projectPromise })
   } else {
     const projectPromise = client.fetch(
-      "*[_type == 'project']| order(_createdAt asc){projectName, projectLink, 'imageUrl': projectImage.asset->url}",
+      "*[_type == 'project']| order(_updatedAt desc){projectName, projectLink, 'imageUrl': projectImage.asset->url}",
     )
     projectPromise
       .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
