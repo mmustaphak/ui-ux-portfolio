@@ -14,7 +14,7 @@ export function ThemeProvider({ children }) {
         const nextIndex = (oldIndex + 1) % themes.length
         return nextIndex
       })
-    }, 5000)
+    }, 50000)
   }, [])
 
 
