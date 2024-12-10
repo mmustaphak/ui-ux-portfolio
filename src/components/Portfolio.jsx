@@ -13,11 +13,11 @@ export async function getProjectPromise() {
     return defer({ projectPromise })
   } else {
     const projectPromise = client.fetch(
-      "*[_type == 'project']| order(_updatedAt desc){projectName, projectLink, 'imageUrl': projectImage.asset->url}",
+      "*[_type == 'project']| order(_updatedAt desc){'id': _id, projectName, projectLink, 'imageUrl': projectImage.asset->url}",
     )
     projectPromise
       .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
-      .catch(console.error("Failed to fetch projects from sanity"))
+      .catch((err) => console.error("Failed to fetch projects from sanity", err))
 
     return defer({ projectPromise });
   }
@@ -52,7 +52,7 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
     );
   }
 
-  function handleShowMore(){
+  function handleShowMore() {
     setCurrentPage(prevCurrentPage => prevCurrentPage + 1)
   }
 
@@ -76,15 +76,14 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
               const shownProjects = (isPaginated === false) ?
                 projectData : projectData.slice(0, recentProject)
 
-              if(recentProject >= projectData.length){
+              if (recentProject >= projectData.length) {
                 setIsShown(false)
               }
 
-
               const renderedProjects = shownProjects.map(
-                ({ projectName, imageUrl, projectLink }) => (
+                ({ id, projectName, imageUrl, projectLink }) => (
                   <ProjectCard
-                    key={projectName}
+                    key={id}
                     name={projectName}
                     img={imageUrl}
                     url={projectLink}
