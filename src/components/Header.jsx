@@ -52,16 +52,16 @@ export default function Header() {
 
         <ul className="hidden justify-between self-center w-full max-w-64 min-[500px]:flex min-[550px]:max-w-[20rem] min-[550px]:text-lg md:max-w-[25rem] lg:max-w-[575px] lg:text-2xl">
           <li className="hover:font-bold">
-            <NavLink className={({ isActive }) => isActive && "font-bold underline"} to="about">About</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="about">About</NavLink>
           </li>
           <li className="hover:font-bold">
-            <NavLink className={({ isActive }) => isActive && "font-bold underline"} to="services">Services</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="services">Services</NavLink>
           </li>
           <li className="hover:font-bold">
-            <NavLink className={({ isActive }) => isActive && "font-bold underline"} to="portfolio">Portfolio</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="portfolio">Portfolio</NavLink>
           </li>
           <li className="hover:font-bold">
-            <NavLink className={({ isActive }) => isActive && "font-bold underline"} to="blog">Blog</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="blog">Blog</NavLink>
           </li>
         </ul>
 
@@ -86,16 +86,16 @@ export default function Header() {
         </button>
 
         <ul className="mt-7">
-          <NavLink className={({isActive})=> isActive && "font-bold underline"} to="about" onClick={handleToggle}>
+          <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="about" onClick={handleToggle}>
             <li className="mx-auto w-fit text-center">About</li>
           </NavLink>
-          <NavLink className={({isActive})=> isActive && "font-bold underline"} to="services" onClick={handleToggle}>
+          <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="services" onClick={handleToggle}>
             <li className="mt-7 mx-auto w-fit text-center">Services</li>
           </NavLink>
-          <NavLink className={({isActive})=> isActive && "font-bold underline"} to="portfolio" onClick={handleToggle}>
+          <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="portfolio" onClick={handleToggle}>
             <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
           </NavLink>
-          <NavLink className={({isActive})=> isActive && "font-bold underline"} to="blog" onClick={handleToggle}>
+          <NavLink className={({ isActive }) => isActive ? "font-bold underline" : undefined} to="blog" onClick={handleToggle}>
             <li className="mt-7 mx-auto w-fit text-center">Blog</li>
           </NavLink>
         </ul>
