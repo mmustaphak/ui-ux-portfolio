@@ -4,6 +4,7 @@ import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
 import Spinner from "./Spinner";
 import H1 from "./Reusable/H1";
+import ProjectCard  from "./ProjectCard";
 
 export async function getProjectPromise() {
   const sessionCache = JSON.parse(sessionStorage.getItem("projectData"))
@@ -30,27 +31,6 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
   const [isShown, setIsShown] = useState(true)
   const theme = useContext(ThemeContext);
 
-  function ProjectCard({ name, url, img }) {
-    return (
-      <a href={url} className="transition-all focus:-translate-y-2 focus:scale-105 hover:-translate-y-2 hover:scale-105">
-        <div className="w-fit min-[500px]:w-full">
-          <div className="p-7 rounded-lg bg-whitish">
-            <img
-              className="mx-auto w-full aspect-video object-cover rounded-lg"
-              src={img}
-              alt="The Bee Charge Design Project"
-            />
-          </div>
-          <h2
-            style={{ color: theme }}
-            className="mt-3 font-semibold text-left md:text-xl md:leading-[normal] md:mt-4 lg:mt-8 lg:text-[2rem]"
-          >
-            {name}
-          </h2>
-        </div>
-      </a>
-    );
-  }
 
   function handleShowMore() {
     setCurrentPage(prevCurrentPage => prevCurrentPage + 1)
@@ -79,6 +59,7 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
               if (recentProject >= projectData.length) {
                 setIsShown(false)
               }
+
 
               const renderedProjects = shownProjects.map(
                 ({ id, projectName, imageUrl, projectLink }) => (
