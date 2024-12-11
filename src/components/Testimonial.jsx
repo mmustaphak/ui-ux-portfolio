@@ -19,20 +19,20 @@ export default function Testimonial() {
     setOnScreenTestimonial(index)
   }
 
-  const renderedTestimonials = testimonialData.map((testimonial, index) => (
+  const renderedTestimonials = testimonialData.map((person, index) => (
     <TestimonialCard 
-      key={testimonial.name} 
-      name={testimonial.name}
-      message={testimonial.message}
+      key={person.id} 
+      name={person.name}
+      message={person.message}
       handleCurrentTestimonial={()=>handleCurrentTestimonial(index)}
       testimonialMap={getMap}
       index={index}
       />
   ));
 
-  const navigationButtons = testimonialData.map((_, index) => (
+  const navigationButtons = testimonialData.map((person, index) => (
     <NavButton
-      key={index}
+      key={person.id}
       currentTestimonial={onScreenTestimonial}
       index={index}
       testimonialMap={getMap}
