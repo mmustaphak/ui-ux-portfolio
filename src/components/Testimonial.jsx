@@ -1,29 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import { ThemeContext } from "./ThemeContext";
-
-const data = [
-  {
-    name: "Alamaster",
-    message:
-      "I just wanted to share a quick note and let you know that you are doing  really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.",
-  },
-  {
-    name: "Dev Ade",
-    message:
-      "I pray you become the best version of yourself and also the biggest techie in Arewa and Naija in a whole insha Allah.",
-  },
-  {
-    name: "Techbro",
-    message:
-      "You have some cool stuff here, i’ll send your work to my other guys to see what the outcome will be. Don’t stop designing bcos u really have some good concept.",
-  },
-  { name: "Damilola", message: "This is impressive, i must commend you." },
-  {
-    name: "GDG",
-    message:
-      "Thanks to you and your team for bringing your passion and creativity to the design of #DevFest",
-  },
-];
+import testimonialData from "../testimonial.json"
 
 export default function Testimonial() {
   const testimonialRef = useRef(null);
@@ -103,11 +80,11 @@ export default function Testimonial() {
     );
   }
 
-  const renderedTestimonials = data.map((testimonial, index) => (
+  const renderedTestimonials = testimonialData.map((testimonial, index) => (
     <Testimonial key={testimonial.name} {...{ ...testimonial, index }} />
   ));
 
-  const navigationButtons = data.map((person, index) => (
+  const navigationButtons = testimonialData.map((person, index) => (
     <NavButton key={index} index={index} />
   ));
 
