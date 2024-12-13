@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import testimonialData from "../testimonial.json"
+import testimonialData from "../testimonial.json";
 import NavButton from "./Testimonial/NavButton";
-import TestimonialCard from "./Testimonial/TestimonialCard"
+import TestimonialCard from "./Testimonial/TestimonialCard";
 
 export default function Testimonial() {
   const testimonialRef = useRef(null);
@@ -14,20 +14,19 @@ export default function Testimonial() {
     return testimonialRef.current;
   }
 
-
-  function handleCurrentTestimonial(index){
-    setOnScreenTestimonial(index)
+  function handleCurrentTestimonial(index) {
+    setOnScreenTestimonial(index);
   }
 
   const renderedTestimonials = testimonialData.map((person, index) => (
-    <TestimonialCard 
-      key={person.id} 
+    <TestimonialCard
+      key={person.id}
       name={person.name}
       message={person.message}
-      handleCurrentTestimonial={()=>handleCurrentTestimonial(index)}
+      handleCurrentTestimonial={() => handleCurrentTestimonial(index)}
       testimonialMap={getMap}
       index={index}
-      />
+    />
   ));
 
   const navigationButtons = testimonialData.map((person, index) => (

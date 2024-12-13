@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useFetcher } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
-import Spinner from "./Spinner.jsx"
+import Spinner from "./Spinner.jsx";
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -14,33 +14,36 @@ export async function action({ request }) {
 
   const data = await response.json();
 
-  return data.success ? "Message sent successfully ✔" : "Failed to send Email"
+  return data.success ? "Message sent successfully ✔" : "Failed to send Email";
 }
 
 export default function GetInTouchForm() {
-
-  const { Form, data } = useFetcher()
-  const formResponse = data
-  const [isClicked, setIsClicked] = useState(false)
+  const { Form, data } = useFetcher();
+  const formResponse = data;
+  const [isClicked, setIsClicked] = useState(false);
   const theme = useContext(ThemeContext);
 
   function SubmissionMessage() {
     if (isClicked) {
-      return formResponse ?
+      return formResponse ? (
         <p style={{ color: theme }} className="text-xl font-bold">
           {formResponse}
-        </p> : <Spinner />
+        </p>
+      ) : (
+        <Spinner />
+      );
     }
   }
 
   function handleClick({ target }) {
-    const formData = new FormData(target.form)
+    const formData = new FormData(target.form);
     for (const value of formData.values()) {
-      if (!value) { // empty string
-        return
+      if (!value) {
+        // empty string
+        return;
       }
     }
-    setIsClicked(true)
+    setIsClicked(true);
   }
 
   return (
