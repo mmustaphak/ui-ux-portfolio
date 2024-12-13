@@ -1,6 +1,6 @@
 import Services from "../components/Services";
 import Resume from "../components/Resume";
-import Portfolio, { getProjectPromise } from "../components/Portfolio";
+import  { getProjectPromise } from "../components/Portfolio";
 import Testimonial from "../components/Testimonial";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
