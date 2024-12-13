@@ -4,36 +4,35 @@ import { ThemeContext } from "./ThemeContext";
 import { client } from "../sanity";
 import Spinner from "./Spinner";
 import H1 from "./Reusable/H1";
-import ProjectCard  from "./ProjectCard";
+import ProjectCard from "./ProjectCard";
 
 export async function getProjectPromise() {
-  const sessionCache = JSON.parse(sessionStorage.getItem("projectData"))
+  const sessionCache = JSON.parse(sessionStorage.getItem("projectData"));
 
   if (sessionCache) {
-    const projectPromise = new Promise(resolve => resolve(sessionCache))
-    return defer({ projectPromise })
+    const projectPromise = new Promise((resolve) => resolve(sessionCache));
+    return defer({ projectPromise });
   } else {
     const projectPromise = client.fetch(
       "*[_type == 'project']| order(_updatedAt desc){'id': _id, projectName, projectLink, 'imageUrl': projectImage.asset->url}",
-    )
+    );
     projectPromise
-      .then(res => sessionStorage.setItem("projectData", JSON.stringify(res)))
-      .catch((err) => console.error("Failed to fetch projects from sanity", err))
+      .then((res) => sessionStorage.setItem("projectData", JSON.stringify(res)))
+      .catch((err) =>
+        console.error("Failed to fetch projects from sanity", err),
+      );
 
     return defer({ projectPromise });
   }
 }
 
-
 export default function Portfolio({ projectPromise, isPaginated = false }) {
-
-  const [currentPage, setCurrentPage] = useState(1)
-  const [isShown, setIsShown] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isShown, setIsShown] = useState(true);
   const theme = useContext(ThemeContext);
 
-
   function handleShowMore() {
-    setCurrentPage(prevCurrentPage => prevCurrentPage + 1)
+    setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
   }
 
   return (
@@ -48,18 +47,24 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
           <Await
             resolve={projectPromise}
             errorElement={
-              <h1 style={{ color: theme }} className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]">Projects are unavailable at the moment</h1>
+              <h1
+                style={{ color: theme }}
+                className="col-span-full my-4 font-semibold md:text-2xl lg:text-[2.5rem]"
+              >
+                Projects are unavailable at the moment
+              </h1>
             }
           >
             {(projectData) => {
-              const recentProject = currentPage * 6
-              const shownProjects = (isPaginated === false) ?
-                projectData : projectData.slice(0, recentProject)
+              const recentProject = currentPage * 6;
+              const shownProjects =
+                isPaginated === false
+                  ? projectData
+                  : projectData.slice(0, recentProject);
 
               if (recentProject >= projectData.length) {
-                setIsShown(false)
+                setIsShown(false);
               }
-
 
               const renderedProjects = shownProjects.map(
                 ({ id, projectName, imageUrl, projectLink }) => (
@@ -75,8 +80,7 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
               return (
                 <>
                   {renderedProjects}
-                  {
-                    ((isPaginated && isShown)) &&
+                  {isPaginated && isShown && (
                     <button
                       onClick={handleShowMore}
                       style={{ backgroundColor: theme }}
@@ -84,10 +88,9 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
                     >
                       Load More
                     </button>
-                  }
+                  )}
                 </>
-              )
-
+              );
             }}
           </Await>
         </div>

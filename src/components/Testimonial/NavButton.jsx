@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
 
-export default function NavButton({ index, currentTestimonial, testimonialMap }) {
-  const theme = useContext(ThemeContext)
+export default function NavButton({
+  index,
+  currentTestimonial,
+  testimonialMap,
+}) {
+  const theme = useContext(ThemeContext);
 
   function scrollToTestimonial(testimonial) {
     const map = testimonialMap();
