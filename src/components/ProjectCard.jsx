@@ -1,13 +1,17 @@
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
-export default function ProjectCard({ name, url, img }) {
+export default function ProjectCard({ name, url, img, index }) {
   const theme = useContext(ThemeContext);
+  const animation =
+    index % 2
+      ? "animate-[slide-from-right_900ms]"
+      : "animate-[slide-from-left_900ms]";
 
   return (
     <a
       href={url}
-      className="transition-all focus:-translate-y-2 focus:scale-105 hover:-translate-y-2 hover:scale-105"
+      className={`transition-all ${animation} focus:-translate-y-2 focus:scale-105 hover:-translate-y-2 hover:scale-105`}
     >
       <div className="w-fit min-[500px]:w-full">
         <div className="p-7 rounded-lg bg-whitish">

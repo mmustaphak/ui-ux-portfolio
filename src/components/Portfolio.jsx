@@ -67,12 +67,13 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
               }
 
               const renderedProjects = shownProjects.map(
-                ({ id, projectName, imageUrl, projectLink }) => (
+                ({ id, projectName, imageUrl, projectLink }, index) => (
                   <ProjectCard
                     key={id}
                     name={projectName}
                     img={imageUrl}
                     url={projectLink}
+                    index={index}
                   />
                 ),
               );
