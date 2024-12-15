@@ -5,7 +5,7 @@ import TestimonialCard from "./Testimonial/TestimonialCard";
 
 export default function Testimonial() {
   const testimonialRef = useRef(null);
-  const [onScreenTestimonial, setOnScreenTestimonial] = useState(testimonialData[0].id);
+  const [onScreenTestimonial, setOnScreenTestimonial] = useState(null);
 
   function getMap() {
     if (!testimonialRef.current) {
@@ -32,7 +32,7 @@ export default function Testimonial() {
     observer.observe(node)
   }
 
-  const renderedTestimonials = testimonialData.map((person,) => (
+  const renderedTestimonials = testimonialData.map((person) => (
     <TestimonialCard
       key={person.id}
       id={person.id}
