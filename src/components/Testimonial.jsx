@@ -5,7 +5,7 @@ import TestimonialCard from "./Testimonial/TestimonialCard";
 
 export default function Testimonial() {
   const testimonialRef = useRef(null);
-  const [onScreenTestimonial, setOnScreenTestimonial] = useState(0);
+  const [onScreenTestimonial, setOnScreenTestimonial] = useState(testimonialData[0].id);
 
   function getMap() {
     if (!testimonialRef.current) {
@@ -18,22 +18,22 @@ export default function Testimonial() {
     setOnScreenTestimonial(index);
   }
 
-  const renderedTestimonials = testimonialData.map((person, index) => (
+  const renderedTestimonials = testimonialData.map((person,) => (
     <TestimonialCard
       key={person.id}
       name={person.name}
       message={person.message}
-      handleCurrentTestimonial={() => handleCurrentTestimonial(index)}
+      handleCurrentTestimonial={() => handleCurrentTestimonial(person.id)}
       testimonialMap={getMap}
-      index={index}
+      id={person.id}
     />
   ));
 
-  const navigationButtons = testimonialData.map((person, index) => (
+  const navigationButtons = testimonialData.map((person) => (
     <NavButton
       key={person.id}
       currentTestimonial={onScreenTestimonial}
-      index={index}
+      index={person.id}
       testimonialMap={getMap}
     />
   ));
