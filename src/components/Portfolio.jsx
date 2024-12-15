@@ -35,6 +35,7 @@ export default function Portfolio({ projectPromise, isPaginated = false }) {
     setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
   }
 
+
   return (
     <>
       <H1>My Portfolio Projects</H1>

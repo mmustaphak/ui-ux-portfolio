@@ -23,7 +23,7 @@ export default function Testimonial() {
     });
   }
   const observer = new IntersectionObserver(handleIntersection, {
-    root: document.querySelector("#scrollArea"),
+    root: null,
     rootMargin: "0px",
     threshold: 0.5,
   });
