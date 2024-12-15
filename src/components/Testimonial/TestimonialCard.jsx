@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
 
 export default function TestimonialCard({
-  index,
+  id,
   name,
   message,
   handleCurrentTestimonial,
@@ -28,13 +28,13 @@ export default function TestimonialCard({
     <div
       ref={(node) => {
         const map = testimonialMap();
-        if(!map.get(index)){
-          map.set(index, node)
+        if(!map.get(id)){
+          map.set(id, node)
           observer.observe(node)
         }
       }}
-      className={`testimonial${index} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
-      data-index={index}
+      className={`testimonial${id} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
+      data-index={id}
     >
       <h3
         style={{ color: theme }}
