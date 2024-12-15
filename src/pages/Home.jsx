@@ -15,6 +15,7 @@ export function loader() {
 export default function Home() {
   const theme = useContext(ThemeContext);
   const { projectPromise } = useLoaderData();
+  const whatsappLink = "https://wa.me/+2348127529252"
 
   return (
     <section>
@@ -26,7 +27,7 @@ export default function Home() {
           managers and engineers to collaborate together.
         </p>
 
-        <a href="https://wa.me/+2348127529252">
+        <a href={whatsappLink}>
           <div
             style={{ background: theme }}
             className="mt-6 transition font-medium mx-auto py-0.5 w-full max-w-[110px] min-[375px]:max-w-[130px] min-[500px]:py-2 rounded-[3.37px] text-[10px] text-white md:mt-7 lg:mt-8 md:text-xl md:max-w-[280px] md:px-0 md:rounded-md lg:max-w-[409px] lg:py-[10px] lg:text-2xl lg:rounded-lg hover:-translate-x-1 hover:-translate-y-1"
@@ -51,12 +52,13 @@ export default function Home() {
         <p className="text-[0.75rem] font-medium md:text-2xl lg:text-[2.5rem]">
           Redesign your Existing website with me.
         </p>
-        <button
+        <a
+          href={whatsappLink}
           style={{ color: theme }}
-          className="mt-2 py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] rounded-button font-medium text-[10.11px] bg-white md:text-lg md:px-0 md:mt-4 lg:text-[1.5rem] lg:mt-8 lg:py-[10px] md:py-1 md:max-w-[280px] lg:max-w-[409px]"
+          className="transition mt-2 py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] rounded-button font-medium text-[10.11px] bg-white md:text-lg md:px-0 md:mt-4 lg:text-[1.5rem] lg:mt-8 lg:py-[10px] md:py-1 md:max-w-[280px] lg:max-w-[409px] hover:-translate-x-1 hover:-translate-y-1"
         >
           Get In Touch
-        </button>
+        </a>
       </div>
 
       <div className="mt-6 md:mt-8 lg:mt-[50px]">
