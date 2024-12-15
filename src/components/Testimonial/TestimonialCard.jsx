@@ -28,11 +28,10 @@ export default function TestimonialCard({
     <div
       ref={(node) => {
         const map = testimonialMap();
-        if (node) {
-          map.set(index, node);
+        if(!map.get(index)){
+          map.set(index, node)
+          observer.observe(node)
         }
-        const nodeRef = map.get(index);
-        observer.observe(nodeRef);
       }}
       className={`testimonial${index} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
       data-index={index}
