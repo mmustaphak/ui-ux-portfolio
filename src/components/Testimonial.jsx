@@ -14,18 +14,32 @@ export default function Testimonial() {
     return testimonialRef.current;
   }
 
-  function handleCurrentTestimonial(index) {
-    setOnScreenTestimonial(index);
+  function handleIntersection(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const { id } = entry.target
+        setOnScreenTestimonial(id)
+      }
+    });
+  }
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: document.querySelector("#scrollArea"),
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
+  function handleObserve(node) {
+    observer.observe(node)
   }
 
   const renderedTestimonials = testimonialData.map((person,) => (
     <TestimonialCard
       key={person.id}
+      id={person.id}
       name={person.name}
       message={person.message}
-      handleCurrentTestimonial={() => handleCurrentTestimonial(person.id)}
+      handleObserve={handleObserve}
       testimonialMap={getMap}
-      id={person.id}
     />
   ));
 
@@ -33,7 +47,7 @@ export default function Testimonial() {
     <NavButton
       key={person.id}
       currentTestimonial={onScreenTestimonial}
-      index={person.id}
+      id={person.id}
       testimonialMap={getMap}
     />
   ));

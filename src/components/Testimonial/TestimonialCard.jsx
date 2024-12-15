@@ -5,24 +5,10 @@ export default function TestimonialCard({
   id,
   name,
   message,
-  handleCurrentTestimonial,
+  handleObserve,
   testimonialMap,
 }) {
   const theme = useContext(ThemeContext);
-
-  const observer = new IntersectionObserver(handleIntersection, {
-    root: document.querySelector("#scrollArea"),
-    rootMargin: "0px",
-    threshold: 0.5,
-  });
-
-  function handleIntersection(entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        handleCurrentTestimonial();
-      }
-    });
-  }
 
   return (
     <div
@@ -30,11 +16,12 @@ export default function TestimonialCard({
         const map = testimonialMap();
         if(!map.get(id)){
           map.set(id, node)
-          observer.observe(node)
+          handleObserve(node)
         }
       }}
       className={`testimonial${id} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
-      data-index={id}
+      id={id}
+      data-id={id}
     >
       <h3
         style={{ color: theme }}
