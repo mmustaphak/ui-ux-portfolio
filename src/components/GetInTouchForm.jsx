@@ -49,7 +49,7 @@ export default function GetInTouchForm() {
   return (
     <Form
       method="post"
-      className="px-4 my-6 flex flex-col mx-auto md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]"
+      className="px-4 my-6 flex flex-col mx-auto sm:max-w-[650px] md:max-w-none md:my-8 md:px-8 lg:px-0 lg:my-[50px] lg:w-[90%]"
     >
       <SubmissionMessage />
 

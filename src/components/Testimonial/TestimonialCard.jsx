@@ -14,12 +14,12 @@ export default function TestimonialCard({
     <div
       ref={(node) => {
         const map = testimonialMap();
-        if(!map.get(id)){
+        if (!map.get(id)) {
           map.set(id, node)
           handleObserve(node)
         }
       }}
-      className={`testimonial${id} max-h-[374px] bg-whitish p-5 mr-4 snap-center snap-always min-w-full md:p-10 lg:px-[188px] lg:py-[88px]`}
+      className={`max-h-[374px] bg-whitish p-5 snap-center snap-always basis-[90vw] shrink-0 sm:max-w-[600px]  md:max-w-none md:p-10 lg:px-[188px] lg:py-[88px]`}
       id={id}
       data-id={id}
     >
