@@ -49,16 +49,16 @@ export default function Layout({ children }) {
           </div>
 
           <div className="self-center flex justify-between mt-4 w-full max-w-[154px] text-base min-[480px]:max-w-[185px] lg:mt-[53px] lg:max-w-[552px]">
-            <a href="">
+            <a href="https://www.instagram.com/muftee_yy/">
               <BiLogoInstagramAlt className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
-            <a href="">
+            <a href="https://x.com/Mustee__jr">
               <FaTwitter className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
-            <a href="">
+            <a href="https://www.linkedin.com/in/mustapha-danladi-3122491ba">
               <PiLinkedinLogoFill className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
-            <a href="">
+            <a href="https://www.behance.net/mustaphadanladi">
               <LiaBehance className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
           </div>
