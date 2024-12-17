@@ -1,36 +1,12 @@
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 import H1 from "./Reusable/H1";
-
-const servicesDataArr = [
-  {
-    title: "User Research and Analysis",
-    description:
-      "Understanding user needs and behaviors through methods like surveys and interviews to inform design decisions and create user personas.",
-  },
-  {
-    title: "Wireframing and Prototyping",
-    description:
-      "Creating wireframes and prototypes to plan and test the structure and functionality of a digital interface before final design implementation.",
-  },
-  {
-    title: "Visual Design",
-    description:
-      "Crafting the aesthetic elements of a digital interface, including color, typography, and imagery, to ensure a visually appealing.",
-  },
-  {
-    title: "Usability Testing and Iteration",
-    description:
-      "Evaluating the effectiveness of a design through testing with real users, collecting feedback, and making iterative improvements.",
-  },
-];
+import data from "../services.json"
 
 export default function Services() {
   const theme = useContext(ThemeContext);
 
   function ServiceCard({ title, description }) {
-    const theme = useContext(ThemeContext);
-
     return (
       <div className="py-8 px-5 max-w-[420px] rounded-lg bg-whitish lg:max-w-none  lg:px-[38px] lg:pt-8 lg:pb-[59px]">
         <svg
@@ -92,8 +68,8 @@ export default function Services() {
     );
   }
 
-  const renderedServices = servicesDataArr.map((service) => (
-    <ServiceCard key={service.title} {...service} />
+  const renderedServices = data.map((service) => (
+    <ServiceCard key={service.id} {...service} />
   ));
 
   return (
