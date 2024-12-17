@@ -19,7 +19,7 @@ export default function TestimonialCard({
           handleObserve(node)
         }
       }}
-      className={`max-h-[374px] bg-whitish p-5 snap-center snap-always basis-[90vw] shrink-0 sm:max-w-[600px]  md:max-w-none md:p-10 lg:px-[188px] lg:py-[88px]`}
+      className={`max-h-[374px] bg-whitish p-5 snap-center snap-always basis-[90vw] shrink-0 sm:max-w-[600px]  md:max-w-none md:p-10 lg:max-h-none lg:max-w-[1220px] lg:px-[188px] lg:py-[88px]`}
       id={id}
       data-id={id}
     >
