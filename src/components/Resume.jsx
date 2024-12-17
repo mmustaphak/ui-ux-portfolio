@@ -13,7 +13,7 @@ export default function Resume() {
       </p>
       <a
         target="_blank"
-        href=""
+        href="https://drive.google.com/file/d/12bJDUx3-dgmwgQYxRTSM8DQV7K72gTL5/view"
         className="py-0.5 px-[23px] w-full max-w-[110px] min-[375px]:max-w-[130px] rounded-[2.14px] text-[6.43px] font-medium border border-white md:border-2 md:px-0 md:rounded-md md:text-xl md:py-1 md:max-w-[280px] lg:text-[1.25rem] lg:py-[10px] lg:max-w-[409px] lg:border-3 lg:text-2xl lg:rounded-lg "
       >
         Download Resume
