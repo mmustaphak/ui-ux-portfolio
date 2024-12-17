@@ -5,7 +5,7 @@ import Spinner from "./Spinner.jsx";
 
 export async function action({ request }) {
   const formData = await request.formData();
-  formData.append("access_key", "a4f2764b-ca7c-42b9-92da-e2c480b03b35");
+  formData.append("access_key", import.meta.env.VITE_APP_WEB3FORM_ACCESS_KEY);
 
   const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
