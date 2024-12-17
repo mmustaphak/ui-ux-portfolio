@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "User Research and Analysis",
+    "description": "Understanding user needs and behaviors through methods like surveys and interviews to inform design decisions and create user personas."
+  },
+  {
+    "id": 2,
+    "title": "Wireframing and Prototyping",
+    "description": "Creating wireframes and prototypes to plan and test the structure and functionality of a digital interface before final design implementation."
+  },
+  {
+    "id": 3,
+    "title": "Visual Design",
+    "description": "Crafting the aesthetic elements of a digital interface, including color, typography, and imagery, to ensure a visually appealing."
+  },
+  {
+    "id": 4,
+    "title": "Usability Testing and Iteration",
+    "description": "Evaluating the effectiveness of a design through testing with real users, collecting feedback, and making iterative improvements."
+  }
+]
