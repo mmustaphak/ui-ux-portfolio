@@ -18,6 +18,7 @@ export async function action({ request }) {
 }
 
 console.log(import.meta.env)
+console.log(process.env)
 
 export default function GetInTouchForm() {
   const { Form, data } = useFetcher();
