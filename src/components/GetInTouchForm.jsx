@@ -17,6 +17,8 @@ export async function action({ request }) {
   return data.success ? "Message sent successfully ✔" : "Failed to send Email";
 }
 
+console.log(import.meta.env.VITE_APP_WEB3FORM_ACCESS_KEY)
+
 export default function GetInTouchForm() {
   const { Form, data } = useFetcher();
   const formResponse = data;
