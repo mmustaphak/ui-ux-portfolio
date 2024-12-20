@@ -37,16 +37,18 @@ export default function Layout({ children }) {
         className="mt-auto pt-6 pb-3 px-7 w-full text-center text-white text-[6.24px] min-[480px]:text-lg min-[480px]:px-12 min-[480px]:pt-8 min-[480px]:pb-4 lg:px-[110px] lg:pt-[96px] lg:pb-[50px]"
       >
         <div className="flex flex-col justify-center mx-auto w-full max-w-[1220px]">
-          <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
-            <img
-              className="min-h-[1.2em] min-[480px]:min-h-[1em] lg:min-h-[2.2em]"
-              src={logo}
-              alt=" "
-            />
-            <p className="min-[480px]:text-[0.55rem] lg:text-2xl md:text-[0.7rem]">
-              Mufteey&apos;s Design
-            </p>
-          </div>
+          <a href="/">
+            <div className="flex justify-between items-center mx-auto w-full max-w-[72px] min-[480px]:max-w-[105px] md:max-w-[125px] lg:max-w-[270px]">
+              <img
+                className="min-h-[1.2em] min-[480px]:min-h-[1em] lg:min-h-[2.2em]"
+                src={logo}
+                alt="Mufteey&apos;s Logo"
+              />
+              <p className="min-[480px]:text-[0.55rem] lg:text-2xl md:text-[0.7rem]">
+                Mufteey&apos;s Design
+              </p>
+            </div>
+          </a>
 
           <div className="self-center flex justify-between mt-4 w-full max-w-[154px] text-base min-[480px]:max-w-[185px] lg:mt-[53px] lg:max-w-[552px]">
             <a href="https://www.instagram.com/muftee_yy/">
