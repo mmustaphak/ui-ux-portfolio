@@ -20,7 +20,7 @@ export default function NavButton({
 
 
   return (
-    <>
+    <label aria-label={`Scroll to testimonial ${id}`}>
       <style>{`:checked{background: ${theme}}`}</style>
       <input
         name="testimonials"
@@ -30,6 +30,6 @@ export default function NavButton({
         checked={id == currentTestimonial}
         readOnly={true}
       />
-    </>
+    </label>
   );
 }
