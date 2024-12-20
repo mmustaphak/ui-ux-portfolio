@@ -51,8 +51,8 @@ export default function Header() {
           </svg>
         </Link>
 
-        <ul className="hidden justify-between self-center w-full max-w-64 min-[500px]:flex min-[550px]:max-w-[20rem] min-[550px]:text-lg md:max-w-[25rem] lg:max-w-[575px] lg:text-2xl">
-          <li className="hover:font-bold">
+        <div className="hidden justify-between self-center w-full max-w-64 min-[500px]:flex min-[550px]:max-w-[20rem] min-[550px]:text-lg md:max-w-[25rem] lg:max-w-[575px] lg:text-2xl">
+          <span className="hover:font-bold">
             <NavLink
               className={({ isActive }) =>
                 isActive ? "font-bold underline" : undefined
@@ -61,8 +61,8 @@ export default function Header() {
             >
               About
             </NavLink>
-          </li>
-          <li className="hover:font-bold">
+          </span>
+          <span className="hover:font-bold">
             <NavLink
               className={({ isActive }) =>
                 isActive ? "font-bold underline" : undefined
@@ -71,8 +71,8 @@ export default function Header() {
             >
               Services
             </NavLink>
-          </li>
-          <li className="hover:font-bold">
+          </span>
+          <span className="hover:font-bold">
             <NavLink
               className={({ isActive }) =>
                 isActive ? "font-bold underline" : undefined
@@ -81,8 +81,8 @@ export default function Header() {
             >
               Portfolio
             </NavLink>
-          </li>
-          <li className="hover:font-bold">
+          </span>
+          <span className="hover:font-bold">
             <NavLink
               className={({ isActive }) =>
                 isActive ? "font-bold underline" : undefined
@@ -91,8 +91,8 @@ export default function Header() {
             >
               Blog
             </NavLink>
-          </li>
-        </ul>
+          </span>
+        </div>
 
         <button
           style={{ background: theme }}
