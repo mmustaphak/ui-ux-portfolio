@@ -51,16 +51,16 @@ export default function Layout({ children }) {
           </a>
 
           <div className="self-center flex justify-between mt-4 w-full max-w-[154px] text-base min-[480px]:max-w-[185px] lg:mt-[53px] lg:max-w-[552px]">
-            <a href="https://www.instagram.com/muftee_yy/">
+            <a href="https://www.instagram.com/muftee_yy/" aria-label="Go to Mufteey&apos;s Instagram page">
               <BiLogoInstagramAlt className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
-            <a href="https://x.com/Mustee__jr">
+            <a href="https://x.com/Mustee__jr" aria-label="Go to Mufteey&apos;s X (previously known as twitter) page">
               <FaTwitter className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
-            <a href="https://www.linkedin.com/in/mustapha-danladi-3122491ba">
+            <a href="https://www.linkedin.com/in/mustapha-danladi-3122491ba" aria-label="Go to Mufteey&apos;s LinkedIn page">
               <PiLinkedinLogoFill className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
-            <a href="https://www.behance.net/mustaphadanladi">
+            <a href="https://www.behance.net/mustaphadanladi" aria-label="Go to Mufteey&apos;s Behance page">
               <LiaBehance className="size-[12px] min-[480px]:size-[20px] md:size-[25px] lg:size-[48px]" />
             </a>
           </div>
@@ -70,6 +70,7 @@ export default function Layout({ children }) {
               <select
                 className="appearance-none text-[0.38rem] w-full max-w-[32px] bg-transparent bg-drop-down bg-[position:center_right] bg:[size:6.21px] bg-no-repeat min-[480px]:bg-[size:14px] min-[480px]:max-w-[40px] min-[480px]:text-[0.55rem] md:max-w-[70px] lg:max-w-[120px] lg:bg-[size:24px] lg:text-2xl md:text-[0.7rem]"
                 name="language"
+                aria-label="Language"
               >
                 <option value="English">English</option>
               </select>
