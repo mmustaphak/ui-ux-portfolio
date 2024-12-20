@@ -7,14 +7,19 @@ export async function action({ request }) {
   const formData = await request.formData();
   formData.append("access_key", import.meta.env.VITE_APP_WEB3FORM_ACCESS_KEY);
 
-  const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: formData,
-  });
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  return data.success ? "Message sent successfully ✔" : "Failed to send Email";
+    return data.success ? "Message sent successfully ✔" : "Failed to send Email";
+  } catch (e) {
+    console.error("Failed to send Message to email service", e)
+  }
+
 }
 
 export default function GetInTouchForm() {
@@ -37,7 +42,14 @@ export default function GetInTouchForm() {
 
   function handleClick({ target }) {
     const formData = new FormData(target.form);
+    const emailCheck = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
+
+    if (!emailCheck.test(formData.get("email"))) {
+      console.log("Wrong Email supplied")
+      return
+    }
     for (const value of formData.values()) {
+      console.log(value)
       if (!value) {
         // empty string
         return;
