@@ -23,12 +23,12 @@ export default function TestimonialCard({
       id={id}
       data-id={id}
     >
-      <h3
+      <h2
         style={{ color: theme }}
         className="text-[13.3px] font-semibold md:text-2xl lg:text-[2.5rem]"
       >
         From {name}
-      </h3>
+      </h2>
       <p className="mt-2 text-[.6875rem] mx-auto max-w-[412px] md:max-w-[700px] md:text-xl md:leading-[normal] md:mt-4 lg:mt-6 lg:max-w-full lg:text-[2rem]">
         {message}
       </p>
