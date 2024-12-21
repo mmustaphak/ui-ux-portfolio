@@ -57,7 +57,7 @@ export default function Testimonial() {
       <div className="testimonial relative w-full flex gap-x-80 mt-2 overflow-x-scroll snap-x snap-mandatory md:mt-8 min-[660px]:px-16">
         {renderedTestimonials}
       </div>
-      <div className="flex justify-between mx-auto mt-2 max-w-[75px] md:mt-8 md:max-w-[150px] lg:max-w-[232px]">
+      <div className="flex justify-center gap-x-4 mt-2 md:mt-8 ">
         {navigationButtons}
       </div>
     </>
