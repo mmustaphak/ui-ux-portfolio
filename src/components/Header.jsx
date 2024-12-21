@@ -113,7 +113,7 @@ export default function Header() {
           <img src={close} alt="Close " />
         </button>
 
-        <ul className="mt-7">
+        <div className="mt-7 flex flex-col gap-y-7">
           <NavLink
             className={({ isActive }) =>
               isActive ? "font-bold underline" : undefined
@@ -121,7 +121,7 @@ export default function Header() {
             to="about"
             onClick={handleToggle}
           >
-            <li className="mx-auto w-fit text-center">About</li>
+            <span className="mx-auto w-fit text-center">About</span>
           </NavLink>
           <NavLink
             className={({ isActive }) =>
@@ -130,7 +130,7 @@ export default function Header() {
             to="services"
             onClick={handleToggle}
           >
-            <li className="mt-7 mx-auto w-fit text-center">Services</li>
+            <span className="w-fit text-center">Services</span>  
           </NavLink>
           <NavLink
             className={({ isActive }) =>
@@ -139,7 +139,7 @@ export default function Header() {
             to="portfolio"
             onClick={handleToggle}
           >
-            <li className="mt-7 mx-auto w-fit text-center">Portfolio</li>
+            <span className="w-fit text-center">Portfolio</span>
           </NavLink>
           <NavLink
             className={({ isActive }) =>
@@ -148,9 +148,9 @@ export default function Header() {
             to="blog"
             onClick={handleToggle}
           >
-            <li className="mt-7 mx-auto w-fit text-center">Blog</li>
+            <span className="w-fit text-center">Blog</span>
           </NavLink>
-        </ul>
+        </div>
       </nav>
     </header>
   );
