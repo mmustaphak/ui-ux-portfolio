@@ -13,7 +13,7 @@ export function ThemeProvider({ children }) {
         const nextIndex = (oldIndex + 1) % themes.length;
         return nextIndex;
       });
-    }, 50000);
+    }, 5000);
   }, []);
 
   return (
