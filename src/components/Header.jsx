@@ -105,9 +105,10 @@ export default function Header() {
           <img src={menu} alt="Open menu" />
         </button>
       </nav>
-
-      <nav
-        className={`${isHamburger === false ? "-translate-x-full" : "translate-x-0"} transition-all duration-500 fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white min-[500px]:hidden`}
+      
+      {/* Sidebar */}
+      <aside
+        className={`${isHamburger === false ? "-translate-x-full" : "translate-x-0"} z-10 transition-all duration-500 fixed top-0 p-[30px] flex flex-col items-center w-full h-lvh bg-white min-[500px]:hidden`}
       >
         <button onClick={handleToggle} className="self-start">
           <img src={close} alt="Close " />
@@ -151,7 +152,7 @@ export default function Header() {
             <span className="w-fit text-center">Blog</span>
           </NavLink>
         </div>
-      </nav>
+      </aside>
     </header>
   );
 }
