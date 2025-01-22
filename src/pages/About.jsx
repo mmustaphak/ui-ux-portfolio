@@ -1,7 +1,5 @@
 import Resume from "../components/Resume";
-import blackMufteey from "../assets/black-mufteey.svg";
-import greenMufteey from "../assets/green-mufteey.svg";
-import blueMufteey from "../assets/blue-mufteey.svg";
+
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 import H1 from "../components/Reusable/H1";
@@ -12,11 +10,11 @@ export default function About() {
   function imageTheme(hexCode) {
     switch (hexCode) {
       case "#151515":
-        return blackMufteey;
+        return "black-mufteey.svg";
       case "#00A070":
-        return greenMufteey;
+        return "green-mufteey.svg";
       case "#000958":
-        return blueMufteey;
+        return "blue-mufteey.svg";
     }
   }
 
