@@ -1,5 +1,3 @@
-import Resume from "../components/Resume";
-
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContext";
 import H1 from "../components/Reusable/H1";
