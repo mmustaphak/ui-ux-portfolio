@@ -7,23 +7,16 @@ import H1 from "./Reusable/H1";
 import ProjectCard from "./ProjectCard";
 
 export async function getProjectPromise() {
-  const sessionCache = JSON.parse(sessionStorage.getItem("projectData"));
-
-  if (sessionCache) {
-    const projectPromise = new Promise((resolve) => resolve(sessionCache));
-    return defer({ projectPromise });
-  } else {
-    const projectPromise = client.fetch(
-      "*[_type == 'project']| order(_updatedAt desc){'id': _id, projectName, projectLink, 'imageUrl': projectImage.asset->url}",
+  const projectPromise = client.fetch(
+    "*[_type == 'project']| order(_updatedAt desc){'id': _id, projectName, projectLink, 'imageUrl': projectImage.asset->url}", 
+  );
+  projectPromise
+    .then((res) => sessionStorage.setItem("projectData", JSON.stringify(res)))
+    .catch((err) =>
+      console.error("Failed to fetch projects from sanity", err),
     );
-    projectPromise
-      .then((res) => sessionStorage.setItem("projectData", JSON.stringify(res)))
-      .catch((err) =>
-        console.error("Failed to fetch projects from sanity", err),
-      );
 
-    return defer({ projectPromise });
-  }
+  return defer({ projectPromise });
 }
 
 export default function Portfolio({ projectPromise, isPaginated = false }) {
