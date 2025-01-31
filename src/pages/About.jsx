@@ -36,7 +36,6 @@ export default function About() {
         love for problem-solving, I specialize in translating ideas into
         user-friendly designs. Let&apos;s craft something exceptional together!
       </p>
-      <Resume />
     </section>
   );
 }
